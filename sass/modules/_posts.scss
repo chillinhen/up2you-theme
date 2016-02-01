@@ -1,0 +1,66 @@
+article{
+    &.panel.programme{
+        margin:0 $vspacing;
+        > section {
+            padding:0 1em;
+            margin-top:2 * $vspacing;
+            .excerpt{
+                li{
+                    list-style: none;
+                    @include check-list (url('../img/check.svg'),1.8em,0 .2em, 0, -2em);
+                    line-height: 2;
+                    min-height: 30px;
+                    margin-bottom: 1em;
+                    margin-left: 4em;
+                    font-size:1em;
+                    font-weight:500;
+                    &:before{
+                        left:-3em;
+                    }
+                }
+            }
+        }
+    }
+    body.kontakt &{
+         @include display(flex);
+         @include justify-content(space-around);
+         > div {
+             @include flex(1);
+             flex-basis: 45%;
+         }
+         > div:first-child{
+             margin-right: 2.5em;
+         }
+         > div:last-child{
+             margin-left: 2.5em;
+         }
+    }
+}
+.parallax{
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    width:100%;
+    padding:3 * $vspacing 0;
+    position:relative;
+    &:before{
+        @include triangle(50px, #ededee, down);
+        position: absolute;
+        top:0;
+        left:50%;
+        margin-left:-25px;
+        z-index: 9999999;
+        content:' ';
+    }
+    .post{
+        @include alpha-background-color(rgba(white, 0.75), white);
+        padding:2 * $vspacing;
+        .content_block{
+            text-align: center;
+            margin-left:300px;
+        }
+        a.facebook{
+            @include button($color_contrast, white,2px);
+        }
+    }
+}

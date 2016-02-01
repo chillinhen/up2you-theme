@@ -1,0 +1,84 @@
+$susy: (
+columns: 12,  // The number of columns in your grid
+gutters: 1/4    , // The size of a gutter in relation to a single column
+);
+
+html,
+body {
+  height: 100%;
+}
+
+* { 
+    @include box-sizing(border-box);
+    position: relative;
+    &:before, &:after{
+        @include box-sizing(border-box);
+    }
+}
+html.flexbox{
+    #page {
+        @include display(flex);
+        @include align-items(stretch);
+        min-height: 100vh;
+        @include flex-direction(column);
+        > *{
+            @include flex(1);
+        }
+    }
+}
+.wrapper {
+    @include clearfix;
+        @include display(flex);
+        @include flex-direction(row);
+
+        > * {@include flex(1);}
+        > .content {
+            @include flex(2); 
+            .woocommerce & {
+                 @include flex(4); 
+            }
+        }
+        > aside {
+            @include flex(1); 
+            .woocommerce.single & {display: none;}
+        }
+
+
+
+    #page > header &.top {
+        @include align-items(flex-end);
+        @include justify-content(center);
+        > nav {
+          flex-basis: 42%;  
+        }
+        > .logo{
+            flex-basis: 18%;
+        }
+        > .meta {
+            flex-basis: 20%;
+            margin:0 15% 0 5%;
+        }
+    }
+    #page > main .panels &{
+        @include align-items(flex-start);
+        @include justify-content(space-around);
+    }
+    #page > main .parallax &{
+        @include align-items(flex-start);
+        @include justify-content(space-around);
+    }
+    #page > footer &{
+        padding-top:2 * $vspacing;
+        .footer-widget{
+            flex-basis: 25%;
+        }
+    }
+}
+
+.column-cards{
+    width:80%;
+    margin:0px auto;
+    @include columns(4, 2em, avoid);
+    
+    > * {@include clearfix;}
+}

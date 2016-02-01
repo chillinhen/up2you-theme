@@ -1,0 +1,73 @@
+#page {
+    > header {
+        padding-top:$vspacing;   
+    }
+    > main {
+        .panels {
+            margin:0 $vspacing;
+            padding-bottom:2 * $vspacing;
+        }
+        #story {
+            @include linear-gradient(0deg, #ededee 0%, #fff 50%, #fff 100%);
+            /*    @extend %reset;*/
+            width:100%;
+            padding:5 * $vspacing;
+        }
+        .site-main{
+            body:not(.home) & {
+                border-top: 1px dashed $color-light-grey;
+                padding-top:2 * $vspacing;
+            }
+        }
+        aside.sidebar {
+            body:not(.home) &, body:not(.woocoomerce) & {
+                margin-top:2 * $vspacing;
+            }
+        }
+    }
+    > footer {
+        background:$footer-background;
+        .footer-widget{
+            padding:0 $vspacing;
+            &:first-child{
+                padding-left:0;
+            }
+            &:last-child{
+                padding-right:0;
+            }
+        }
+        
+        
+        .footer-bottom-line{
+            padding:$vspacing 0;
+            background: $color-dark-grey;
+            * {color:lighten($color-dark-grey,100%);}
+            > .wrapper > *:last-child{text-align: right;}           
+        }
+    }
+    .sidebar-widget {
+        
+        > div {
+            margin:0 0 $vspacing 0;
+            padding:0 0 $vspacing 0;
+            border:{
+                width:0 0 1px 0;
+                style:dashed;
+                color:$color-light-grey;
+            }
+        }
+        .woocommerce &{
+            margin-right:2em;
+            ~.content{
+                margin-left: 2em;
+            }
+        }
+    }
+    .content{
+        .single.woocommerce &{
+            padding:0 20%;
+        }
+        .page.kontakt &{padding:0 10%;}
+    }
+}
+

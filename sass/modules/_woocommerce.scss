@@ -1,0 +1,107 @@
+.woocommerce{
+
+    .star-rating{
+        color:$color_primary;
+    }
+    .content{
+        ul.products{
+            padding:2em 0;
+            li.product {
+                min-height: 380px;
+                text-align:center;
+                .add_to_cart_button{
+                    margin-top: 1em;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+                .add_to_cart_button.added{
+                    text-indent: -999px;
+                    background-color: $color_primary;
+                }
+                .added_to_cart{
+                    color:white;
+                    padding:0;
+                }
+            }
+            .star-rating{
+                margin:.5em;
+            }
+            .price{
+                width: 100%;
+                clear: both;
+                margin-top: 1em;
+            }
+
+        }
+        div.product{
+            .thumbnails{
+                margin:2em 0 0 0;
+            }
+        }
+    }
+    .sidebar{
+        .product_list_widget{
+            li{
+                padding:.2em;
+                margin:.2em 0;
+                border:{
+                    width: 0 0 1px 0;
+                    style:solid;
+                    color:lighten($color_light_grey,20%);
+                }
+                &:last-child{border:0;}
+                .product-title{color:#000;}
+
+                img {width:60px;}
+
+                a {color:#000;}
+            }
+        }
+        .widget_product_tag_cloud{
+            h3 {display: none;}
+        }
+    }
+
+    .woocommerce-tabs {
+        border: 1px solid $color_border;
+        border-width: 1px 0;
+        padding: 1em 0;
+
+        ul.tabs {
+            list-style: none;
+            margin-left: 0;
+
+
+
+            li {
+                display: inline-block;
+                margin-right: 1em;
+                position: relative;
+                text-align: center;
+                @include border-radius(0);
+
+                &.active {
+                    a {
+                        color: $color_body;
+                        background: white;
+                        font-weight: bold;
+                    }
+
+                    &:after {
+                        content: "\f107";
+                        font-family: "FontAwesome";
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        height: 1em;
+                        width: 1em;
+                        line-height: 1;
+                        margin-left: -.5em;
+                    }
+                }
+            }
+        }
+    }
+}

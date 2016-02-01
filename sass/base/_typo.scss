@@ -1,0 +1,328 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('fonts/fontawesome/fontawesome-webfont.eot?v=#4.1.0');
+    src: url('fonts/fontawesome/fontawesome-webfont.eot?#iefix&v=#4.1.0') format('embedded-opentype'),
+        url('fonts/fontawesome/fontawesome-webfont.woff2?v=#4.1.0') format('woff2'),
+        url('fonts/fontawesome/fontawesome-webfont.woff?v=#4.1.0') format('woff'),
+        url('fonts/fontawesome/fontawesome-webfont.ttf?v=#4.1.0') format('truetype'),
+        url('fonts/fontawesome/fontawesome-webfont.svg?v=#4.1.0#fontawesomeregular') format('svg');
+    //src: url('fonts/fontawesome/FontAwesome.otf') format('opentype'); // used when developing fonts
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    font-size: $base-font-size;
+    text-rendering: optimizeLegibility;
+    @media screen and (max-width:$screen-md){
+        moz-text-size-adjust:auto;
+        -webkit-text-size-adjust: auto;
+        -ms-text-size-adjust: auto;
+    }
+}
+body,
+button,
+input,
+textarea {
+    color: $color_body;
+    font-family: $base-font;
+    line-height: 1.618;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+select {
+    color: initial;
+    font-family: $base-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: $header-font;
+    clear: none;
+    font-weight: 500;
+    margin: 0 0 .618em;
+    font-style: italic;
+    .full-size-bar &{
+        font-style: normal;
+    }
+    .column-cards &, aside &{
+       font-family: $base-font;
+    }
+    .related_post & {
+        padding:1em;
+        text-align: center;
+        > *{
+            color:#fff !important;   
+        }
+        span {
+            font-size: smaller;
+            display: block;
+            line-height: 1;
+            margin-top: 1em;
+        }
+        
+    }
+    &.headline, li.product &{
+        border:{
+            width:1px 0;
+            style:dashed;
+            color:$color-dark-grey;
+        }
+        padding:.5em 0; 
+        text-align: center;
+    }
+    
+}
+
+.badge, [id*="message"] *{
+    font-family: $handwritten-font;
+    line-height: 1;
+    font-weight:normal;
+}
+h1{
+    font-size: 2.244em;
+    .column-cards & {
+        font-size: 1.2em;
+        margin: .5em 0;
+        text-transform: uppercase;
+        color: $color_primary;
+        border-bottom: 2px solid #000;
+    }
+    letter-spacing: -1px;
+    line-height: 1.214;
+    font-weight: 300;
+
+    a {
+        font-weight: 300;
+    }
+}
+h2{
+    font-size: 1.618em;
+        .column-cards & {
+        font-size: 1em;
+    }
+    letter-spacing: -1px;
+}
+h3{
+    font-size: 1.387em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+hr {
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin: 0 0 $vspacing;
+}
+p {
+    padding: 0 0 $vspacing;
+    margin:0 !important;
+}
+
+ul,
+ol {
+    margin:0;
+    padding: 0;
+}
+
+ul {
+    list-style: disc;
+    list-style: none;
+    #page > main {
+        list-style-type: square;
+        margin: 0 0 $vspacing 0;
+    }
+}
+
+ol {
+    list-style: decimal;
+}
+
+li {
+    list-style-position: inside;
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: $vspacing;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin: 0 0 1.618em;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    padding: 0 $vspacing;
+    border-left: 3px solid rgba(0,0,0,0.05);
+    font-style: italic;
+}
+
+address {
+    margin: 0 0 $vspacing;
+}
+
+pre {
+    background: #fff9c0;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    margin-bottom: 1.618em;
+    padding: 1.618em;
+    overflow: auto;
+    max-width: 100%;
+}
+
+code,
+kbd,
+tt,
+var {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    background-color: rgba(0,0,0,0.05);
+    padding: .202em .53em;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    text-decoration: none;
+    font-weight: 700;
+    background: transparent;
+}
+
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+figure {
+    margin: 0;
+}
+
+table {
+    margin: 0 0 $vspacing;
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+}
+
+img {
+    height: auto; // Make sure images are scaled correctly.
+    max-width: 100%; // Adhere to container width.
+    display: block;
+}
+
+a {
+    color: $color_links;
+    text-decoration: none;
+    font-weight: normal;
+    &:hover {
+      color:$color_links;
+    }
+    &:focus {
+        outline: none !important;
+    }
+    &:active {outline:none;}
+}
+/*** specials ***/
+.claim, .question{
+    font-family: $handwritten-font;
+    font-weight: normal;
+    line-height: 1;   
+    font-size: 2.8em;
+    .parallax & {  
+        color:$color-dark-grey !important;
+    }
+}
+.claim{
+    @include transform(rotate(-12deg));
+    @include transform-origin(center top);
+    margin-top:1em; 
+}
+.question{
+    @include transform(rotate(-6deg));
+    @include transform-origin(center top);
+    &:after{
+        @include transform(rotate(16deg));
+    @include transform-origin(center top);
+        @include bogen(url('../img/bogen.svg'));
+        bottom:0;
+        right:0;
+    }
+}
+
+.full-size-bar{
+    > * {
+        color:white;
+    }
+    h2, p {
+        margin:0; padding:0;
+    }
+    h2 {
+        font-size:3em;
+    }
+    p{
+        font-size: 1.8em;
+    }
+}
+/*** woocommerce***/
+.price{
+    font-size: larger !important;
+       font-weight: bold !important;
+       color:#000 !important;
+    .woocommerce li.product &,
+    .woocommerce div.product &.p,
+    .woocommerce div.product &.span{
+       
+    }
+}

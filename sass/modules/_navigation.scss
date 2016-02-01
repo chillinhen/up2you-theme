@@ -1,0 +1,107 @@
+#main-nav{
+    > ul {
+        @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(flex-start);
+
+        > li {
+            @include flex(1);
+        }
+    }
+}
+.meta-menu{
+    @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(flex-start);
+        li {
+          @include flex(1);
+          a {
+              position: relative;
+          }
+          &.login > a{@include icon-style("\f090", #000);}
+          &.contact > a{@include icon-style("\f0e0", #000);}
+          &.search > a{@include icon-style("\f002", #000);}
+          
+        }
+}
+
+#page > header {
+    .logo{
+        img {padding-bottom: $vspacing; } 
+    }
+    .menu-item{
+        > a {
+            padding-bottom: 2 * $vspacing;
+            font-size:.9em;
+            margin:0 .5em;
+            display: block;
+            border:{
+                width:0 0 5px 0;
+                style:solid;
+                color:transparent;
+            }
+        }
+    }
+}
+#main-nav {
+    > ul {
+        > li.menu-item {
+            position: relative;
+            > a{
+                font-family: $header-font!important;
+                color:$color-dark-grey;
+                text-align: center;
+                &:hover, &:focus {
+                    border-color: black;
+                }
+            }
+            &.current-menu-item > a, 
+            &.current_page_parent > a,
+            &.current_page_item > a{
+                border-color: $color_primary;
+            }
+            &:hover > ul.sub-menu,
+            &.current-menu-item > ul.sub-menu{display:block;}
+        }
+    }
+    ul.sub-menu{
+        display: none;
+        position:absolute;
+        top:3.75 * $vspacing;
+        left:0;
+        z-index: 9999;
+        background:white;
+/*        border-top:5px solid $color_primary;*/
+        min-width: 100%;
+        margin: 0;
+        @include shadow(2px);
+
+        li {
+            display: block;
+            border-bottom:1px dashed $color_light_grey;
+            &:last-child{border:0;}
+            a{
+                padding:.5em 1em;
+                font-size:1.2em;
+            }
+        }
+    }
+}
+
+
+.footer-menu{
+    li {
+        display: inline-block;
+        @extend %divider;
+        &:last-child{
+            padding:0;
+            border:0;
+        }
+    }
+}
+.widget_nav_menu{
+    li{
+        padding: .2em 0;
+        border-bottom: 1px dotted $color-light-grey;
+    }
+}
