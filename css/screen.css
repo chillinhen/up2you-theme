@@ -331,14 +331,14 @@ a {
     bottom: 0;
     right: 0; }
 
-.full-size-bar > * {
+[id*="message"] > * {
   color: white; }
-.full-size-bar h2, .full-size-bar p {
+[id*="message"] h2, [id*="message"] p {
   margin: 0;
   padding: 0; }
-.full-size-bar h2 {
+[id*="message"] h2 {
   font-size: 3em; }
-.full-size-bar p {
+[id*="message"] p {
   font-size: 1.8em; }
 
 /*** woocommerce***/
@@ -1016,9 +1016,10 @@ body:not(.home) #page > main aside.sidebar, body:not(.woocoomerce) #page > main 
       color: white !important; }
 
 .full-size-bar {
-  text-align: center;
-  position: relative;
-  padding: 16px 0; }
+  position: relative; }
+  body:not(.kontakt) .full-size-bar {
+    padding: 16px 0;
+    text-align: center; }
   .full-size-bar:after {
     content: ' ';
     position: absolute;
@@ -1223,6 +1224,59 @@ body:not(.home) #page > main aside.sidebar, body:not(.woocoomerce) #page > main 
     height: 100%; }
     .page-template-page-standorte-php .iframe-elastic iframe {
       pointer-events: none; }
+
+/** Modal Box functions**/
+#modalBox {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999999;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none; }
+  #modalBox:target {
+    opacity: 1;
+    pointer-events: auto; }
+  #modalBox .modal-dialog {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    width: 800px;
+    margin-left: -400px;
+    -webkit-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    pointer-events: auto;
+    height: 600px; }
+    #modalBox .modal-dialog .close {
+      position: absolute;
+      top: .5em;
+      right: 2em; }
+    #modalBox .modal-dialog .claim {
+      position: absolute;
+      left: 50%;
+      top: 150px;
+      width: 300px;
+      margin-left: -230px;
+      color: #d14491;
+      font-size: 2em; }
+    #modalBox .modal-dialog .wpcf7 form {
+      background: white;
+      width: 300px !important;
+      float: right;
+      margin: 3em 2em 0 2em;
+      opacity: 1 !important; }
+  #modalBox:target .modal-dialog {
+    top: 10%; }
+
+/*** Modal Box Styling ***/
+.modal-dialog {
+  background: white url(../img/bg_modal-form.png) no-repeat bottom left/contain; }
 
 .banner {
   min-height: 500px;
@@ -1431,36 +1485,11 @@ article.panel.programme {
         display: inline-block; }
       article.panel.programme > section .excerpt li:before {
         left: -3em; }
+article .wpcf7 {
+  float: right;
+  margin-left: 2em; }
 body.kontakt article {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
-  box-pack: distribute;
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  -ms-justify-content: space-around;
-  -o-justify-content: space-around;
-  justify-content: space-around;
-  -ms-flex-pack: distribute; }
-  body.kontakt article > div {
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    box-flex: 1;
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    flex-basis: 45%; }
-  body.kontakt article > div:first-child {
-    margin-right: 2.5em; }
-  body.kontakt article > div:last-child {
-    margin-left: 2.5em; }
+  padding-top: 18px; }
 
 .parallax {
   background-attachment: fixed;
@@ -1570,57 +1599,32 @@ body.kontakt article {
         line-height: 1;
         margin-left: -.5em; }
 
-/** Modal Box functions**/
-#modalBox {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 999999999;
-  opacity: 0;
-  -webkit-transition: opacity 100ms ease-in;
-  -moz-transition: opacity 100ms ease-in;
-  transition: opacity 100ms ease-in;
-  pointer-events: none; }
-  #modalBox:target {
-    opacity: 1;
-    pointer-events: auto; }
-  #modalBox .modal-dialog {
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    width: 800px;
-    margin-left: -400px;
-    -webkit-transition: all 200ms ease-in;
-    -moz-transition: all 200ms ease-in;
-    transition: all 200ms ease-in;
-    pointer-events: auto;
-    height: 600px; }
-    #modalBox .modal-dialog .close {
-      position: absolute;
-      top: .5em;
-      right: 2em; }
-    #modalBox .modal-dialog .claim {
-      position: absolute;
-      left: 50%;
-      top: 150px;
-      width: 300px;
-      margin-left: -230px;
-      color: #d14491;
-      font-size: 2em; }
-    #modalBox .modal-dialog .wpcf7 form {
-      background: white;
-      width: 300px !important;
-      float: right;
-      margin: 3em 2em 0 2em;
-      opacity: 1 !important; }
-  #modalBox:target .modal-dialog {
-    top: 10%; }
-
-/*** Modal Box Styling ***/
-.modal-dialog {
-  background: white url(../img/bg_modal-form.png) no-repeat bottom left/contain; }
+.full-size-bar div:not(.contact-data) p {
+  padding: 0; }
+body.kontakt .full-size-bar {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  background: #d14491; }
+  body.kontakt .full-size-bar > div[class*="col-"] {
+    flex-basis: 50%; }
+  body.kontakt .full-size-bar .contact-data {
+    padding: 0 2em; }
+    body.kontakt .full-size-bar .contact-data * {
+      color: white; }
 
 /*# sourceMappingURL=screen.css.map */

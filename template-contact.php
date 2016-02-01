@@ -1,9 +1,14 @@
-
+<?php
+/**
+ * Template name: Kontakt
+ */
+get_header();
+?>
 
 <main role="main">
     <?php get_template_part('partials/banner', 'contact'); ?>
-     <!-- section -->
-    <section class="site-main wrapper">
+    <section class="content">
+        <div class="wrapper">
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
                     <?php get_template_part('partials/article', 'page'); ?>
                 <?php endwhile; ?>
@@ -14,6 +19,7 @@
             <?php endif; ?>
         </div>
     </section>
+
     <!-- /section -->
 </main>
 
