@@ -1,4 +1,51 @@
 article{
+    aside & {
+        margin:0 2em;
+        padding:2em;
+    }
+    .content &:not(.programme),
+    .content &:not(.trainer){
+        margin: 2 * $vspacing 0;
+        padding: 2 * $vspacing 0;
+        @include border-style(1px 0 0 0, dashed, $color_border);
+    }
+    &.trainer{
+        @include border-style(1px, solid, $color_border);
+    }
+    .post_content {
+        @include clearfix;
+    }
+    footer{
+        font-size: smaller;
+        color:lighten($color_body,20%); 
+        .single & {
+            margin-top:$vspacing;
+        }
+    }
+    &.has-post-thumbnail{
+        @include display(flex);
+        @include justify-content(space-between);
+        > a {flex-basis: 20%;}
+        > section {flex-basis: 70%;}
+        
+        &.type-trainer{
+            > * {@include flex (1);}
+            > *:last-child {
+                margin-left: 1em;
+            }
+        }
+    }
+    > section {}
+    footer {
+        margin-top:$vspacing;
+        padding-top:$vspacing;
+        border:{
+            width:1px 0 0 0;
+            style:solid;
+            color:$color_border;
+        }
+    }
+
     &.panel.programme{
         margin:0 $vspacing;
         > section {
@@ -21,13 +68,18 @@ article{
             }
         }
     }
-    .wpcf7{
-        float: right;
-        margin-left:2em;
-    }
     body.kontakt & {
         padding-top:2 + $vspacing;
-    }
+        .post_content{
+            @include display(flex);
+            @include flex-direction(row);
+            @include justify-content(space-between);
+            > div {
+                @include flex(2);
+            }
+            > aside {margin-left: 2em;}
+        }
+    } 
 }
 .parallax{
     background-attachment: fixed;
@@ -51,9 +103,6 @@ article{
         .content_block{
             text-align: center;
             margin-left:300px;
-        }
-        a.facebook{
-            @include button($color_contrast, white,2px);
         }
     }
 }

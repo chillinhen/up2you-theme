@@ -51,7 +51,7 @@ h6{
     .full-size-bar &{
         font-style: normal;
     }
-    .column-cards &, aside &{
+   [class*="-cards"] &, aside &{
        font-family: $base-font;
     }
     .related_post & {
@@ -80,23 +80,27 @@ h6{
     
 }
 
-.badge, [id*="message"] *{
+.badge, [id*="message"] *, [id*="contact"] h1{
     font-family: $handwritten-font;
     line-height: 1;
     font-weight:normal;
 }
 h1{
     font-size: 2.244em;
-    .column-cards & {
+    letter-spacing: -1px;
+    line-height: 1.214;
+    font-weight: 300;
+    [class*="-cards"] &, aside & {
         font-size: 1.2em;
         margin: .5em 0;
         text-transform: uppercase;
         color: $color_primary;
         border-bottom: 2px solid #000;
     }
-    letter-spacing: -1px;
-    line-height: 1.214;
-    font-weight: 300;
+    [id*="contact"] & {
+        margin-top:2 * $vspacing;
+    }
+
 
     a {
         font-weight: 300;
@@ -104,7 +108,7 @@ h1{
 }
 h2{
     font-size: 1.618em;
-        .column-cards & {
+    [class*="-cards"] &, aside & {
         font-size: 1em;
     }
     letter-spacing: -1px;
@@ -273,6 +277,18 @@ a {
         outline: none !important;
     }
     &:active {outline:none;}
+}
+/*** Content ****/
+article{
+    .page_title{
+        color:$color_primary;
+        margin-bottom: $vspacing;
+        border:{
+            width:0 0 2px 0;
+            style:solid;
+            color:#000;
+        }
+    }
 }
 /*** specials ***/
 .claim, .question{

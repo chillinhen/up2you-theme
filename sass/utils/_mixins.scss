@@ -178,7 +178,13 @@ box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
 }
 /* Bsp. @include alpha-background-color(rgba(black, 0.35), white); */
 
-
+@mixin border-style($width, $style, $col){
+    border:{
+        width:$width;
+        style:$style;
+        color:$col;
+    }
+}
 @mixin columns($number, $gap, $method){
     -moz-column-count: $number;
     -moz-column-gap: $gap;
@@ -192,12 +198,8 @@ box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
         -webkit-column-break-inside: $method;
         page-break-inside: $method;
         break-inside: $method;
-        border:{
-            width:1px;
-            style:solid;
-            color:$color_light_grey;
-        }
         padding:1em;
         margin-bottom: $gap;
+        @include border-style(1px, solid, $color_border);
     }
 }

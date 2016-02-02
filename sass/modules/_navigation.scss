@@ -60,8 +60,8 @@
             &.current_page_item > a{
                 border-color: $color_primary;
             }
-            &:hover > ul.sub-menu,
-            &.current-menu-item > ul.sub-menu{display:block;}
+            &:hover > ul.sub-menu{display:block;}
+/*            &.current-menu-item > ul.sub-menu{display:block;}*/
         }
     }
     ul.sub-menu{

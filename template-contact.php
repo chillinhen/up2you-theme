@@ -4,11 +4,10 @@
  */
 get_header();
 ?>
-
 <main role="main">
     <?php get_template_part('partials/banner', 'contact'); ?>
     <section class="content">
-        <div class="wrapper">
+        <div class="site-main wrapper">
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
                     <?php get_template_part('partials/article', 'page'); ?>
                 <?php endwhile; ?>
@@ -19,8 +18,5 @@ get_header();
             <?php endif; ?>
         </div>
     </section>
-
-    <!-- /section -->
 </main>
-
 <?php get_footer(); ?>

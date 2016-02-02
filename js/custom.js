@@ -1,15 +1,28 @@
 jQuery(document).ready(function ($) {
     //alert('hallo');
-    $('#menu-meta a').each(function(){
+    //remove clutter
+    $('.opening br, .contact-data br').remove();
+    $('#menu-meta a').each(function () {
         $(this).wrapInner('<span></span>');
     });
     //external icons
     $('a').filter(function () {
         return this.hostname && this.hostname !== location.hostname;
     }).append(' <i class="fa fa-external-link"></i>').attr('target', '_blank');
-    
+
     //elastic iframes
-    $('iframe').wrap('<div class="iframe-elastic"></div>');
+    $('iframe')
+            .wrap('<div class="iframe-elastic"></div>')
+            .attr('id','#map');
+
+    //enable pointer events by clicking on parent
+    $('.iframe-elastic').click(function () {
+        $('#map,.gm-style').css('pointer-events', 'all');
+    });
+      // you want to disable pointer events when the mouse leave the canvas area;
+    $("#map").mouseleave(function () {
+        $('#map').css('pointer-events', 'none'); // set the pointer events to none when mouse leaves the map area
+    });
 //    $('.buttongroup a').addClass('button');
 //    
 //    //little shop layout tweaking

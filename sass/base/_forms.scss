@@ -3,7 +3,6 @@
  */
 
 form {
-
     margin-bottom: 0;
     &#wpcf7-f12-o1{
         margin-bottom: 0;
@@ -17,6 +16,14 @@ form {
     #review_form &{
         width:50%;
     }
+    &.search{
+        @include display(flex);
+        @include justify-content(space-between);
+        
+        input[type="search"]{@include flex(2);}
+        input[type="submit"]{@include flex(1);}
+    }
+    .error404 &.search {margin-bottom: $vspacing;}
 
 }
     /**validation ***/

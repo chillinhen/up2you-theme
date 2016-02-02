@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: up2you-theme\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Tue Jan 26 2016 06:19:00 GMT+0100 (CET)\n"
-"POT-Revision-Date: Tue Feb 02 2016 07:57:35 GMT+0100 (CET)\n"
+"POT-Revision-Date: Tue Feb 02 2016 07:08:14 GMT+0100 (CET)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,21 +25,28 @@ msgstr ""
 "X-Generator: Loco - https://localise.biz/"
 
 #: ../404.php:11
+msgctxt "Tut uns leid, Seite nicht gefunden!"
 msgid "Page not found"
 msgstr ""
 
 #: ../404.php:13
+msgctxt ""
+"Die von Ihnen angeforderte Seite scheint nicht (mehr) zu exisitieren. Bitte "
+"kehren Sie zu unserer Startseite zurück oder versuchen es mit dem "
+"Suchformular."
 msgid ""
 "It looks like nothing was found at this location. Please return to our "
 "homepage or try a search."
 msgstr ""
 
 #: ../404.php:20
+msgctxt "Oder lieber zur Startseite?"
 msgid "Or return home?"
 msgstr ""
 
 #: ../footer.php:27
 #, php-format
+msgctxt "designed von"
 msgid "%1$s designed by %2$s."
 msgstr ""
 
@@ -100,6 +107,7 @@ msgid "Sorry, nothing to display."
 msgstr ""
 
 #: ../partials/article-trainer.php:14
+msgctxt "mehr Informationen"
 msgid "more info"
 msgstr ""
 

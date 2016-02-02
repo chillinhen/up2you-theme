@@ -5,7 +5,7 @@ gutters: 1/4    , // The size of a gutter in relation to a single column
 
 html,
 body {
-  height: 100%;
+    height: 100%;
 }
 
 * { 
@@ -28,20 +28,27 @@ html.flexbox{
 }
 .wrapper {
     @include clearfix;
-        @include display(flex);
-        @include flex-direction(row);
+    @include display(flex);
+    @include flex-direction(row);
 
-        > * {@include flex(1);}
-        > .content {
-            @include flex(2); 
-            .woocommerce & {
-                 @include flex(4); 
-            }
+    > * {@include flex(1);}
+    > *:first-child{
+        margin-right: 2em
+    }
+    > *:last-child{
+        margin-left: 2em
+    }
+    > .content {
+        @include flex(2); 
+
+        .woocommerce & {
+            @include flex(4); 
         }
-        > aside {
-            @include flex(1); 
-            .woocommerce.single & {display: none;}
-        }
+    }
+    > aside {
+        @include flex(1); 
+        .woocommerce.single & {display: none;}
+    }
 
 
 
@@ -49,7 +56,7 @@ html.flexbox{
         @include align-items(flex-end);
         @include justify-content(center);
         > nav {
-          flex-basis: 42%;  
+            flex-basis: 42%;  
         }
         > .logo{
             flex-basis: 18%;
@@ -73,12 +80,16 @@ html.flexbox{
             flex-basis: 25%;
         }
     }
-}
+    [class*="-cards"]{
+        [class*="template-trainer"] &{
+            @include display(flex);
+            @include align-items(flex-start);
+            @include justify-content(space-around);
 
-.column-cards{
-    width:80%;
-    margin:0px auto;
-    @include columns(4, 2em, avoid);
-    
-    > * {@include clearfix;}
+            > * {
+                @include flex(1);
+                margin:0 1em;
+            }
+        }
+    }
 }

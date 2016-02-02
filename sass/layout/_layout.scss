@@ -19,9 +19,10 @@
                 padding-top:2 * $vspacing;
             }
         }
+        
         aside.sidebar {
             body:not(.home) &, body:not(.woocoomerce) & {
-                margin-top:2 * $vspacing;
+                margin:2 * $vspacing 0; 
             }
         }
     }
@@ -63,11 +64,12 @@
             }
         }
     }
-    .content{
-        .single.woocommerce &{
-            padding:0 20%;
+    .site-main{
+        .single.woocommerce &,
+        .page.kontakt &,
+        .error404 &{
+            padding:5% 20% 0 20%;
         }
-        .page.kontakt &{padding:0 10%;}
     }
 }
 

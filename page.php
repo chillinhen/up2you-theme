@@ -41,13 +41,10 @@
                 <!-- /article -->
 
             <?php endif; ?>
-
-
-
-            <?php if (!(is_front_page())) : ?>
-                <?php get_sidebar(); ?>
-            <?php endif; ?>
         </div>
+        <?php if (!(is_front_page())) : ?>
+            <?php get_sidebar(); ?>
+        <?php endif; ?>
     </section>
     <!-- /section -->
 </main>
