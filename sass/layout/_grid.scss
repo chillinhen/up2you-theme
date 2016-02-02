@@ -56,14 +56,14 @@ html.flexbox{
         @include align-items(flex-end);
         @include justify-content(center);
         > nav {
-            flex-basis: 42%;  
+            flex-basis: 45%;  
         }
         > .logo{
-            flex-basis: 18%;
+            flex-basis: 15%;
         }
         > .meta {
-            flex-basis: 20%;
-            margin:0 15% 0 5%;
+            flex-basis: 30%;
+            margin: 0 10% 0 10%;
         }
     }
     #page > main .panels &{

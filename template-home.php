@@ -32,7 +32,7 @@ get_header();
             ?>
         </div>
     </section>
-    <?php get_template_part('partials/message', 'second'); ?>
+    <?php #get_template_part('partials/message', 'second'); ?>
     <!-- section -->
     <section class="content" id="story">
         <div class="wrapper">

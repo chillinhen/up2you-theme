@@ -793,12 +793,12 @@ html.flexbox #page {
     justify-content: center;
     -ms-flex-pack: center; }
     #page > header .wrapper.top > nav {
-      flex-basis: 42%; }
+      flex-basis: 45%; }
     #page > header .wrapper.top > .logo {
-      flex-basis: 18%; }
+      flex-basis: 15%; }
     #page > header .wrapper.top > .meta {
-      flex-basis: 20%;
-      margin: 0 15% 0 5%; }
+      flex-basis: 30%;
+      margin: 0 10% 0 10%; }
   #page > main .panels .wrapper {
     -webkit-box-align: start;
     -moz-box-align: start;
@@ -1534,7 +1534,7 @@ body:not(.home) #page > main aside.sidebar, body:not(.woocoomerce) #page > main 
 
 a.btn {
   min-width: 170px;
-  padding: .5em 0;
+  padding: .5em;
   text-align: center;
   display: inline-block;
   line-height: 1;
@@ -1605,10 +1605,10 @@ article footer {
   border-color: rgba(0, 0, 0, 0.1); }
 article.panel.programme {
   margin: 0 16px; }
-  article.panel.programme > section {
+  article.panel.programme .post_content {
     padding: 0 1em;
     margin-top: 32px; }
-    article.panel.programme > section .excerpt li {
+    article.panel.programme .post_content .excerpt li {
       list-style: none;
       position: relative;
       line-height: 2;
@@ -1617,7 +1617,7 @@ article.panel.programme {
       margin-left: 4em;
       font-size: 1em;
       font-weight: 500; }
-      article.panel.programme > section .excerpt li:before {
+      article.panel.programme .post_content .excerpt li:before {
         content: ' ';
         background: transparent url("../img/check.svg") no-repeat 0 0.2em/1.8em;
         padding: 0;
@@ -1627,7 +1627,7 @@ article.panel.programme {
         width: 1.8em;
         height: 1.8em;
         display: inline-block; }
-      article.panel.programme > section .excerpt li:before {
+      article.panel.programme .post_content .excerpt li:before {
         left: -3em; }
 body.kontakt article {
   padding-top: 18px; }

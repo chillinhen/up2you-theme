@@ -48,7 +48,7 @@ article{
 
     &.panel.programme{
         margin:0 $vspacing;
-        > section {
+        .post_content {
             padding:0 1em;
             margin-top:2 * $vspacing;
             .excerpt{

@@ -35,12 +35,7 @@
             <!-- header -->
             <header class="header clear" role="banner">
                 <div class="wrapper top">
-                    <!-- nav -->
-                    <nav id="main-nav" class="nav" role="navigation">
-                        <?php html5blank_nav(); ?>
-                    </nav>
-                    <!-- /nav -->
-                    <!-- logo -->
+                                        <!-- logo -->
                     <div class="logo">
                         <a href="<?php echo home_url(); ?>">
                             <!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
@@ -48,6 +43,12 @@
                         </a>
                     </div>
                     <!-- /logo -->
+                    <!-- nav -->
+                    <nav id="main-nav" class="nav" role="navigation">
+                        <?php html5blank_nav(); ?>
+                    </nav>
+                    <!-- /nav -->
+
                     <div class="meta">
 <?php wp_nav_menu(array('theme_location' => 'meta-links', 'menu_class' => 'meta-menu', 'container' => '', 'fallback_cb' => '')); ?>
                     </div>
