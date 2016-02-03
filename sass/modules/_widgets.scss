@@ -20,7 +20,7 @@
         bottom:-25px;
         left:50%;
         margin-left:-25px;
-        z-index: 999;
+        z-index: 99;
     }
     &#message-01{
         background:$color_secondary url('../img/pattern-first.svg') no-repeat center center / cover;
@@ -29,10 +29,10 @@
         @include triangle(50px, $color_secondary, down);
     }
         &#message-02{
-        background:$color_primary url('../img/pattern-second.svg') no-repeat center center / cover;
+        background:$color_contrast url('../img/pattern-second.svg') no-repeat center center / cover;
     }
     &#message-02:after{
-        @include triangle(50px, $color_primary, down);
+        @include triangle(50px, $color_contrast, down);
     }
 }
 .badge {
@@ -59,6 +59,10 @@
 }
 .thumbnail{
     position: relative;
+    
+    .single & {
+        margin:0 5%;
+    }
     
     &:hover .overlay{
         cursor:pointer;

@@ -1,14 +1,14 @@
 <!-- article -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-
-    <?php if (has_post_thumbnail()) : // Check if Thumbnail exists ?>
-        <div class="thumbnail">
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+    
+    
+    <?php #if (has_post_thumbnail()) : // Check if Thumbnail exists ?>
+<!--        <div class="thumbnail">
+            <a href="<?php #the_permalink(); ?>" title="<?php #the_title(); ?>">
+                <?php #the_post_thumbnail(); // Fullsize image for the single post ?>
             </a>
-        </div>
-    <?php endif; ?>
+        </div>-->
+    <?php #endif; ?>
     <!-- /post thumbnail -->
 
     <section class="post_content">

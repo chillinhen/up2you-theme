@@ -1,22 +1,35 @@
 #page {
     > header {
-        padding-top:$vspacing;   
+        padding-top:$vspacing;
+        .top.fixed{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            z-index: 999;
+            background:white;
+            @include shadow(2px);
+            
+            > * {margin-top:.5em;}
+            
+            &.logged-in{
+                top:40px;
+            }
+        }
     }
     > main {
         .panels {
             margin:0 $vspacing;
             padding-bottom:2 * $vspacing;
         }
-        #story {
+        #page-cnt {
             @include linear-gradient(0deg, #ededee 0%, #fff 50%, #fff 100%);
-            /*    @extend %reset;*/
-            width:100%;
-            padding:5 * $vspacing;
         }
         .site-main{
             body:not(.home) & {
                 border-top: 1px dashed $color-light-grey;
                 padding-top:2 * $vspacing;
+                margin-top: 50px;
             }
         }
         
@@ -69,6 +82,11 @@
         .page.kontakt &,
         .error404 &{
             padding:5% 20% 0 20%;
+        }
+        &#page-cnt > div {
+            width: 70%;
+            margin: 2em auto 0 auto;
+            font-size: larger;
         }
     }
 }

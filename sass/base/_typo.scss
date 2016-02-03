@@ -54,6 +54,10 @@ h6{
    [class*="-cards"] &, aside &{
        font-family: $base-font;
     }
+    .parallax .post_content & {
+        color:$color_primary;
+        text-align: center;
+    }
     .related_post & {
         padding:1em;
         text-align: center;
@@ -312,8 +316,8 @@ article{
         @include transform(rotate(16deg));
     @include transform-origin(center top);
         @include bogen(url('../img/bogen.svg'));
-        bottom:0;
-        right:0;
+        top:120px;
+        left:120px;
     }
 }
 

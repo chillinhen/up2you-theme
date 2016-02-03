@@ -52,7 +52,7 @@ html.flexbox{
 
 
 
-    #page > header &.top {
+    #page > header .top & {
         @include align-items(flex-end);
         @include justify-content(center);
         > nav {
@@ -71,6 +71,7 @@ html.flexbox{
         @include justify-content(space-around);
     }
     #page > main .parallax &{
+        width:75%;
         @include align-items(flex-start);
         @include justify-content(space-around);
     }

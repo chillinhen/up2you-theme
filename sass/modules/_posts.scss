@@ -9,6 +9,9 @@ article{
         padding: 2 * $vspacing 0;
         @include border-style(1px 0 0 0, dashed, $color_border);
     }
+    #page-cnt .content & {
+        @extend %reset;
+    }
     &.trainer{
         @include border-style(1px, solid, $color_border);
     }
@@ -94,15 +97,11 @@ article{
         top:0;
         left:50%;
         margin-left:-25px;
-        z-index: 9999999;
+        z-index: 99;
         content:' ';
     }
-    .post{
+    .post_content{
         @include alpha-background-color(rgba(white, 0.75), white);
         padding:2 * $vspacing;
-        .content_block{
-            text-align: center;
-            margin-left:300px;
-        }
     }
 }

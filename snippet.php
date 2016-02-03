@@ -1,4 +1,13 @@
-Outdoor und Groupfitness
-Training unter freiem Himmel
-Individuelle Trainingsgestaltung
-Stetige Betreuung durch Deinen Personaltrainer 
+
+
+<main role="main">
+    
+
+    <?php get_template_part('partials/message', 'second'); ?>
+
+    <!-- section -->
+        <?php get_template_part('partials/parallax'); ?>
+    <!-- /section -->
+</main>
+
+

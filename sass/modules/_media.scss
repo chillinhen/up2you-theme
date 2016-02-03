@@ -3,6 +3,10 @@
     background-position:90% 75%;
     background-repeat: no-repeat;
     background-size:initial;
+    margin-top:60px;
+     &.logged-in{
+                margin-top:100px;
+            }
     .wrapper{
         @include align-items(flex-start);
     }
@@ -78,26 +82,29 @@
     padding:10px 10px 20px;
     @include img-shadow;
     
-/*    &:before{
+    &:before{
         @include bogen(url('../img/bogen.svg'));
-    }*/
+    }
     &.alignleft{
         margin-right: 2em;
         @include transform(rotate(-8deg));
-/*        &:before {
-            @include transform(scale(-1,1) rotate(24deg));
-            top:50%;
-            right:-250px;   
-        }*/
+        
+        ~ *{float: left;}
+    }
+    #page-cnt &.alignleft:before{
+          @include transform(scale(-1,-1) rotate(-200deg));
+            top:60%;
+            right:-250px; 
     }
     &.alignright{
         margin-left: 2em;
         @include transform(rotate(8deg));
-/*        &:before {
+        &:before {
             @include transform(rotate(2deg));
             top:90%;
             left:-260px;
-        }*/
+        }
+        ~ *{float: right;}
     }
     img {
         display: block;

@@ -5,10 +5,9 @@
  */
 get_header();
 ?>
-
 <main role="main">
     <?php get_template_part('partials/message', 'first'); ?>
-    <section class="panels">
+        <section class="panels">
         <div class="wrapper">
             <!-- Thumbnails -->
             <?php
@@ -32,13 +31,13 @@ get_header();
             ?>
         </div>
     </section>
-    <?php #get_template_part('partials/message', 'second'); ?>
-    <!-- section -->
-    <section class="content" id="story">
-        <div class="wrapper">
+    <?php get_template_part('partials/message', 'second'); ?>
+        <!-- section -->
+    <section id="page-cnt" class="site-main">
+        <div class="content">
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-                    <?php get_template_part('partials/article', 'page'); ?>
-                <?php endwhile; ?>
+                    <?php get_template_part('partials/article-page-no-headline'); ?>
+                <?php endwhile;?>
 
             <?php else: ?>
                 <?php get_template_part('partials/article', '404'); ?>
@@ -47,12 +46,6 @@ get_header();
         </div>
     </section>
     <!-- /section -->
-    <!-- section -->
-        <?php get_template_part('partials/parallax'); ?>
-    <!-- /section -->
+    <?php get_template_part('partials/parallax'); ?>
 </main>
-<?php if (!(is_front_page())) : ?>
-    <?php get_sidebar(); ?>
-<?php endif; ?>
-
 <?php get_footer(); ?>

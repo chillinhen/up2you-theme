@@ -16,9 +16,7 @@
             <?php endif;
             ?>
             <h3 class="headline">
-                <a href="<?php the_permalink(); ?>">
-                    <?php the_title() ?>
-                </a>
+                <?php the_title() ?>
             </h3>
         </header>
         <section class="post_content">
