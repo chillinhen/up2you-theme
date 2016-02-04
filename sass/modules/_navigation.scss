@@ -2,7 +2,7 @@
     > ul {
         @include display(flex);
         @include justify-content(space-between);
-        @include align-items(flex-start);
+        @include align-items(flex-end);
 
         > li {
             @include flex(1);
@@ -31,6 +31,7 @@
     }
     .menu-item{
         > a {
+            padding-top: $vspacing;
             padding-bottom: 2 * $vspacing;
             font-size:.9em;
             margin:0 .5em;

@@ -58,6 +58,8 @@
 
                 <?php if (is_home() || is_front_page()) : ?>
                     <?php get_template_part('partials/banner', 'home'); ?>
+                <?php elseif (is_page('kontakt')) : ?>
+                <?php get_template_part('partials/banner', 'contact'); ?>                  
                 <?php else: ?>
                     <?php get_template_part('partials/banner', 'other'); ?>
                 <?php endif; ?>

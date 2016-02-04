@@ -8,11 +8,30 @@
         
     }
 }
+.cart_totals{
+    margin: 0 2em;
+    width: 30% !important;
+}
+
+.woocommerce{
+    #respond input#submit.alt,
+    a.button.alt,
+    button.button.alt,
+    input.button.alt{
+        &, &:hover {
+            background: $color_primary;
+        }
+    }
+}
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button{
+    padding: .5em !important;
+}
 .full-size-bar{
     position:relative;
-    body:not(.kontakt) & {
-      padding:$vspacing 0; 
+    padding:$vspacing 0; 
       text-align:center;
+    .single-erfolgsstories & {
+      padding-top:2 * $vspacing;
     }
     &:after{
         content:' ';
@@ -211,30 +230,77 @@
             right:2em;
         }
         .claim{
-            position: absolute;
-            left: 50%;
-            top: 150px;
-            width:300px;
-            margin-left: -230px;
             color: $color_primary;
             font-size: 2em;
         }
-        .wpcf7{
-          form {
-            background: white;
-            width: 300px !important; 
-            float: right;
-            margin:3em 2em 0 2em;
-            opacity: 1 !important;
-          }
+        .modal-container{
+            margin:20% 5% 10% 20%;
+            @include display(flex);
+            @include align-items(center);
+            @include justify-content(space-between);
+            > * {@include flex(1);}
         }
     }
     &:target .modal-dialog{
-        top:10%;
+        top:5%;
     }
 }
 
 /*** Modal Box Styling ***/
 .modal-dialog{
     background: white url(../img/bg_modal-form.png) no-repeat bottom left / contain;
+}
+
+/**** Tabbed ****/
+#tabbed{
+     ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0; 
+        li{
+            margin-left: 0;
+            h3 {margin:0;line-height: 1;}
+/*            &:before{display:none;}*/
+        }
+        &#tabs {
+            z-index:10;
+            li{
+                display: inline-block;
+                background-color: $color-primary;
+                border: 1px solid $color-primary;
+                padding: .5em 1em;
+                cursor: pointer;
+                font-weight:bold;
+                h3 {color: #fff;}
+                &:hover, &.active {
+                    background-color: white;
+                    border-bottom: 1px solid white;
+                    h3 {
+                        color:#000;
+                    }
+                }  
+            }
+           
+        }
+         &#tab { 
+             margin-top:-1px;
+             border:{
+                 width:1px 1px 1px 1px;
+                 style:solid;
+                 color:$color-primary;
+             }
+             padding:1em;
+             li{
+                display:none;
+                &.active {
+                    display: block;
+                }
+            }
+         }
+     }
+}
+
+/*** Jump to contact ***/
+#contact:target > div{
+    margin-top: 150px;
 }

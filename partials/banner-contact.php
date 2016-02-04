@@ -2,7 +2,7 @@
 $map = get_field('map');
 if ($map) :
     ?>
-    <div class="banner">
+    <div id="banner">
         <?php 
         $post = $map;
         setup_postdata($post);

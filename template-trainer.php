@@ -10,8 +10,7 @@ get_header();
     <?php get_template_part('partials/message', 'first'); ?>
     <section class="site-main wrapper">
         <div class="content">
-             <div class="column-cards">
-                <!-- Thumbnails -->
+            <!-- Thumbnails -->
             <?php
             $filter = array(
                 'post_type' => 'trainer',
@@ -22,26 +21,27 @@ get_header();
             );
             $trainer = new WP_Query($filter);
             ?>
-                <?php if ($trainer->have_posts()): while ($trainer->have_posts()) : $trainer->the_post();
-                        get_template_part('partials/article-trainer');
-                    endwhile;
-                endif;
-                wp_reset_query();
-                ?>
-            </div>
+            <?php
+            if ($trainer->have_posts()): while ($trainer->have_posts()) : $trainer->the_post();
+                    get_template_part('partials/article');
+                endwhile;
+            endif;
+            wp_reset_query();
+            ?>
+            <hr>
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-                    <?php get_template_part('partials/article-page-no-headline'); ?>
+                    <?php get_template_part('partials/article'); ?>
                 <?php endwhile; ?>
 
             <?php else: ?>
                 <?php get_template_part('partials/article', '404'); ?>
 
-            <?php endif; ?>
-                       
+<?php endif; ?>
+
         </div>
-                <?php if (!(is_front_page())) : ?>
+        <?php if (!(is_front_page())) : ?>
             <?php get_sidebar(); ?>
-        <?php endif; ?>
+<?php endif; ?>
     </section>
 
 </main>

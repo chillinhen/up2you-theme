@@ -1,12 +1,8 @@
-.banner {
+#banner {
     min-height:500px; 
     background-position:90% 75%;
     background-repeat: no-repeat;
     background-size:initial;
-    margin-top:60px;
-     &.logged-in{
-                margin-top:100px;
-            }
     .wrapper{
         @include align-items(flex-start);
     }
@@ -76,7 +72,8 @@
     }
 }
 
-.wp-caption{
+.wp-caption, .thumbnail{
+    display: inline-block;
     position: relative;
     background:white;
     padding:10px 10px 20px;
@@ -84,6 +81,10 @@
     
     &:before{
         @include bogen(url('../img/bogen.svg'));
+        
+        .single &,
+        [class*="trainer"] &,
+        [class*="panel"] & {display:none;}
     }
     &.alignleft{
         margin-right: 2em;
@@ -92,7 +93,7 @@
         ~ *{float: left;}
     }
     #page-cnt &.alignleft:before{
-          @include transform(scale(-1,-1) rotate(-200deg));
+          @include transform(scale(-1,-1) rotate(-180deg));
             top:60%;
             right:-250px; 
     }
@@ -111,17 +112,23 @@
         margin: 0 auto;
         @include img-shadow-inset;
     }
-    .wp-caption-text{
+    .wp-caption-text, .thumbnail-caption-text{
         text-align: left;
-        font-size: 1.6em;
+        font-size: 1.4em;
         line-height: 1.2;
+        display:inline-block;
         font-family: $handwritten-font;
         color:$color_primary !important;
         border-bottom: 0;
-        padding: 1em 0;
+        padding: .5em 0;
         text-align: center !important;
     }
 
+}
+.thumbnail:before{
+    bottom: 5%;
+    right: -75%;
+    @include transform(rotate(-10deg));
 }
 
 .first-bt a{
@@ -141,5 +148,8 @@ a.btn {
     strong{
         display:block;
         text-transform: uppercase;
+    }
+    &#scroll-to{
+        margin-top: $vspacing;
     }
 }

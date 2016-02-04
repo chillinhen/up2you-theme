@@ -7,7 +7,7 @@ $button01 = get_field('button-01');
 $hero = get_field("hero-shot-image");
 ?>
 <?php if ($hero) : ?>
-    <div class="banner" role="banner" style="background-image: url('<?php echo ($hero) ? $hero : ''; ?>');">
+    <div id="banner" role="banner" style="background-image: url('<?php echo ($hero) ? $hero : ''; ?>');">
         <div class="wrapper">
             <?php if ($claim) : ?>
                 <h1 class="claim"><?php echo $claim; ?></h1>

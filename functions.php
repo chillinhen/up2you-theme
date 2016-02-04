@@ -65,7 +65,7 @@ function up2u_theme_setup() {
         $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
 
         if ($thumbnail_image && isset($thumbnail_image[0])) {
-            echo '<span class="thumbnail-caption">' . $thumbnail_image[0]->post_excerpt . '</span>';
+            echo '<span class="thumbnail-caption-text">' . $thumbnail_image[0]->post_excerpt . '</span>';
         }
     }
 

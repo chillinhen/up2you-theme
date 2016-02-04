@@ -35,14 +35,26 @@ get_header();
         <!-- section -->
     <section id="page-cnt" class="site-main">
         <div class="content">
-            <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-                    <?php get_template_part('partials/article-page-no-headline'); ?>
-                <?php endwhile;?>
+       <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-            <?php else: ?>
-                <?php get_template_part('partials/article', '404'); ?>
+                        <!-- article -->
+                        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-            <?php endif; ?>
+                            <?php the_content(); ?>
+
+                            
+
+                        </article>
+                        <!-- /article -->
+<br class="clear">
+
+                            <?php edit_post_link(); ?>
+                    <?php endwhile; ?>
+
+                <?php else: ?>
+                    <?php get_template_part('partials/article', '404'); ?>
+
+                <?php endif; ?>
         </div>
     </section>
     <!-- /section -->
