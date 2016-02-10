@@ -1,7 +1,7 @@
-$susy: (
+/*$susy: (
 columns: 12,  // The number of columns in your grid
 gutters: 1/4    , // The size of a gutter in relation to a single column
-);
+);*/
 
 html,
 body {
@@ -45,6 +45,9 @@ html.flexbox{
             @include flex(4); 
         }
     }
+    .footer-bottom-line & {
+      > .copyright{@include flex(2); }
+    }
 /*    > aside {
         @include flex(1); 
         .woocommerce.single & {display: none;}
@@ -55,16 +58,18 @@ html.flexbox{
     #page > header .top & {
         @include align-items(flex-end);
         @include justify-content(center);
-        > nav {
-            flex-basis: 65%;  
-        }
         > .logo{
-            flex-basis: 20%;
             margin:0;
+            @include flex(1);
         }
+        
+        > nav {
+            @include flex(3);
+        }
+
         > .meta {
-            flex-basis: 30%;
-            margin: 0 10% 0 10%;
+            @include flex(2);
+            margin:0 0 0 0;
         }
     }
     #page > main .panels &{

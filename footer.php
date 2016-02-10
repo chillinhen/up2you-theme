@@ -29,7 +29,7 @@
         </div>
     </div>
     <!-- /copyright -->
-    
+    <div class="scroll-to-top"><i class="fa fa-angle-up fa-large"></i></div><!-- .scroll-to-top -->
 </footer>
 <!-- /footer -->
 </div>

@@ -36,8 +36,6 @@ jQuery(document).ready(function ($) {
         $('.site-main').css('border','0');
     }
     
-    // smooth scrolling
-    
         //tabbed Content - stories
     $("ul#tabs li:first-child, ul#tab li:first-child").addClass('active');
     $("ul#tabs li").click(function(){
@@ -55,6 +53,35 @@ jQuery(document).ready(function ($) {
         $('ul#tabs, ul#tab').addClass('style');
     }
 
+    // scroll-to-top
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 100) {
+            jQuery('.scroll-to-top').fadeIn();
+        } else {
+            jQuery('.scroll-to-top').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    jQuery('.scroll-to-top').click(function () {
+        jQuery('html, body').animate({scrollTop: 0}, 800);
+        return false;
+    });
+    
+    //smooth scrolling for 
+    
+    $('a#scroll-to').on('click', function (e) {
+         e.preventDefault();
+
+         var target = this.hash,
+             $target = $(target);
+
+         $('html, body').stop().animate({
+             'scrollTop': $target.offset().top - 80
+         }, 800, function () {
+             window.location.hash = target;
+         });
+     });
 });
 
 

@@ -689,6 +689,10 @@ fieldset {
   transition: opacity 0.5s 0.5s ease;
   opacity: 0; }
 
+/*$susy: (
+columns: 12,  // The number of columns in your grid
+gutters: 1/4    , // The size of a gutter in relation to a single column
+);*/
 html,
 body {
   height: 100%; }
@@ -794,6 +798,14 @@ html.flexbox #page {
       -moz-flex: 4;
       -ms-flex: 4;
       flex: 4; }
+  .footer-bottom-line .wrapper > .copyright {
+    -webkit-box-flex: 2;
+    -moz-box-flex: 2;
+    box-flex: 2;
+    -webkit-flex: 2;
+    -moz-flex: 2;
+    -ms-flex: 2;
+    flex: 2; }
   #page > header .top .wrapper {
     -webkit-box-align: end;
     -moz-box-align: end;
@@ -813,14 +825,32 @@ html.flexbox #page {
     -o-justify-content: center;
     justify-content: center;
     -ms-flex-pack: center; }
-    #page > header .top .wrapper > nav {
-      flex-basis: 65%; }
     #page > header .top .wrapper > .logo {
-      flex-basis: 20%;
-      margin: 0; }
+      margin: 0;
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+    #page > header .top .wrapper > nav {
+      -webkit-box-flex: 3;
+      -moz-box-flex: 3;
+      box-flex: 3;
+      -webkit-flex: 3;
+      -moz-flex: 3;
+      -ms-flex: 3;
+      flex: 3; }
     #page > header .top .wrapper > .meta {
-      flex-basis: 30%;
-      margin: 0 10% 0 10%; }
+      -webkit-box-flex: 2;
+      -moz-box-flex: 2;
+      box-flex: 2;
+      -webkit-flex: 2;
+      -moz-flex: 2;
+      -ms-flex: 2;
+      flex: 2;
+      margin: 0 0 0 0; }
   #page > main .panels .wrapper {
     -webkit-box-align: start;
     -moz-box-align: start;
@@ -929,7 +959,7 @@ body:not(.home) #page > main .site-main {
   border-top: 1px dashed #ababab;
   padding-top: 64px; }
 #page > main aside.sidebar {
-  margin: 32px 0; }
+  /*            margin:2 * $vspacing 0;*/ }
 #page > footer {
   background: #f3f3f3; }
   #page > footer .footer-widget {
@@ -947,6 +977,8 @@ body:not(.home) #page > main .site-main {
       color: white; }
     #page > footer .footer-bottom-line > .wrapper > *:last-child {
       text-align: right; }
+    #page > footer .footer-bottom-line > .wrapper > .copyright {
+      font-size: smaller; }
 #page .sidebar-widget > div {
   margin: 0 0 16px 0;
   padding: 0 0 16px 0;
@@ -1035,6 +1067,9 @@ body:not(.home) #page > main .site-main {
     flex: 1; }
     .meta-menu li a {
       position: relative; }
+      @media screen and (min-width: 992px) {
+        .meta-menu li a span {
+          /*                  display:none;*/ } }
     .meta-menu li.login > a:before {
       content: "";
       font-family: "FontAwesome";
@@ -1049,6 +1084,12 @@ body:not(.home) #page > main .site-main {
       color: #000; }
     .meta-menu li.search > a:before {
       content: "";
+      font-family: "FontAwesome";
+      margin-right: .53em;
+      display: inline-block;
+      color: #000; }
+    .meta-menu li.account > a:before {
+      content: "";
       font-family: "FontAwesome";
       margin-right: .53em;
       display: inline-block;
@@ -1111,7 +1152,7 @@ body:not(.home) #page > main .site-main {
   border-bottom: 1px dotted #ababab; }
 
 .cart-tab {
-  top: 2.5em !important; }
+  top: 125px !important; }
   .cart-tab a.cart-parent {
     color: white !important;
     background: #76A9D7 !important; }
@@ -1373,6 +1414,31 @@ body:not(.home) #page > main .site-main {
   text-transform: uppercase;
   padding: .5em 1em; }
 
+/*** scrolling **/
+.scroll-to-top {
+  background-color: #edb4d3;
+  background-color: rgba(209, 68, 145, 0.4);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  -webkit-border-radius: 25px 25px 25px 25px;
+  border-radius: 25px 25px 25px 25px;
+  bottom: 100px;
+  cursor: pointer;
+  display: none;
+  font-size: large;
+  padding: 2px 10px;
+  text-align: center;
+  position: fixed;
+  right: 20px;
+  transition: background-color 0.1s linear 0s;
+  z-index: 9999; }
+  .scroll-to-top > * {
+    color: white; }
+  .scroll-to-top:hover {
+    background: #d14491;
+    opacity: 0.8; }
+
 /** Modal Box functions**/
 #modalBox {
   position: fixed;
@@ -1487,10 +1553,6 @@ body:not(.home) #page > main .site-main {
       display: none; }
       #tabbed ul#tab li.active {
         display: block; }
-
-/*** Jump to contact ***/
-#contact:target > div {
-  margin-top: 150px; }
 
 #banner {
   min-height: 500px;

@@ -79,10 +79,36 @@ function up2u_theme_setup() {
         register_nav_menu('footer-links', __('Footer Links'));
         register_nav_menu('seo-links', __('SEO Links'));
     }
+    //remove current sidebars
+    function remove_sidebars() {
+        unregister_sidebar('widget-area-1');
+        unregister_sidebar('widget-area-2');
+    }
 
+    add_action('init', 'remove_sidebars');
 //add Widgets bars
     // If Dynamic Sidebar Exists
     if (function_exists('register_sidebar')) {
+        //external sidebar
+        register_sidebar(array(
+            'name' => __('Allgemeine Sidebar', 'up2you-theme'),
+            'description' => __('Hier die allgemeine Sidebar...', 'up2you-theme'),
+            'id' => 'sidebar-extern',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
+        //internal sidebar
+        register_sidebar(array(
+            'name' => __('Interne Sidebar', 'up2you-theme'),
+            'description' => __('Hier die interne Sidebar,mur für Mitglieder sichtbar', 'up2you-theme'),
+            'id' => 'sidebar-intern',
+            'before_widget' => '<div id="%1$s" class="%2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3>',
+            'after_title' => '</h3>'
+        ));
         // Define Shop Sidebar
         register_sidebar(array(
             'name' => __('Shop Sidebar', 'up2you-theme'),

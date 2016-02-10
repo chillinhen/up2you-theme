@@ -30,7 +30,7 @@
         }
         
         aside.sidebar {
-            margin:2 * $vspacing 0;
+/*            margin:2 * $vspacing 0;*/
         }
     }
     > footer {
@@ -52,7 +52,8 @@
             padding:$vspacing 0;
             background: $color-dark-grey;
             * {color:lighten($color-dark-grey,100%);}
-            > .wrapper > *:last-child{text-align: right;}           
+            > .wrapper > *:last-child{text-align: right;}  
+            > .wrapper > .copyright {font-size: smaller;}
         }
     }
     .sidebar-widget {

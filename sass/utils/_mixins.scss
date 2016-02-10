@@ -170,6 +170,12 @@ box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
     height:60px;
     z-index: 10;
 }
+@mixin circle($item) {
+    width: $item;
+    height: $item;
+    line-height: $item;
+    @include border-radius ($item/2);
+}
 @mixin alpha-background-color($color, $background) {
   $percent: alpha($color) * 100%;
   $opaque: opacify($color, 1);

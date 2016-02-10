@@ -17,10 +17,17 @@
           @include flex(1);
           a {
               position: relative;
+              
+              span {
+                  @media screen and (min-width:$screen-md){
+/*                  display:none;*/
+                  }
+              }
           }
           &.login > a{@include icon-style("\f090", #000);}
           &.contact > a{@include icon-style("\f0e0", #000);}
           &.search > a{@include icon-style("\f002", #000);}
+          &.account > a{@include icon-style("\f007", #000);}
           
         }
 }
