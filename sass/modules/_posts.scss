@@ -27,14 +27,16 @@ article{
     }
     &.type-trainer,
     &.type-erfolgsstories{
-        > main {
-            @include display(flex);
-            @include justify-content(space-between);
-            > * {@include flex (1);}
-            > *:last-child {
-                margin-left: 1em;
+        main {
+            @extend %clearfix;
+        }
+        aside {
+            @include span (4 of 12);
+            ~.post_content {
+              @include span (last 8 of 12);  
             }
         }
+        
     }
     .kontakt &{
         @include display(flex);
@@ -57,7 +59,9 @@ article{
     }
 
     &.panel.programme{
-        margin:0 $vspacing;
+        header {
+            padding: 0 1.2em;
+        }
         .post_content {
             padding:0 1em;
             margin-top:2 * $vspacing;
@@ -76,6 +80,16 @@ article{
                     }
                 }
             }
+        }
+
+    }
+    .shopping-list{
+        margin:2 * $vspacing 0;
+        padding:$vspacing;
+        background:$color_contrast_dark;
+        @extend %clearfix;
+        &, & *, li, li:before, a{
+            color:white;
         }
     }
     body.kontakt & {

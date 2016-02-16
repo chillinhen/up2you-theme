@@ -1,21 +1,15 @@
 #banner {
     min-height:500px; 
-    background-position:90% 75%;
+    background-position:80% 75%;
     background-repeat: no-repeat;
     background-size:initial;
     .wrapper{
-        @include align-items(flex-start);
+        padding-top: 2em;
     }
     * {
         color:white !important;
     }
-    h1.claim {
-        margin-top: 2em;
-    }
-    h1.claim:after{
-        top: 100px;
-        right: 20px;
-    }
+
     .claim-list{
         margin:3em 0 2em 0;
         h1,h2,h3.h4,h5,h6 {
@@ -71,12 +65,22 @@
 
     }
 }
-
+.thumbnail{
+    margin-bottom: 2 * $vspacing;
+    > a {
+        display: block;
+        width:inherit;
+        height:inherit;
+        overflow: hidden;
+    }
+}
 .wp-caption, .thumbnail{
     display: inline-block;
+    width: 100%;
     position: relative;
     background:white;
     padding:10px 10px 20px;
+
     @include img-shadow;
     
     &:before{
@@ -89,8 +93,8 @@
     &.alignleft{
         margin-right: 2em;
         @include transform(rotate(-8deg));
-        
-        ~ *{float: left;}
+        z-index:999;
+        ~ div{float: left;}
     }
     #page-cnt &.alignleft:before{
           @include transform(scale(-1,-1) rotate(-180deg));
@@ -100,12 +104,13 @@
     &.alignright{
         margin-left: 2em;
         @include transform(rotate(8deg));
+        z-index:999;
         &:before {
             @include transform(rotate(2deg));
             top:90%;
             left:-260px;
         }
-        ~ *{float: right;}
+        ~ div{float: right;}
     }
     img {
         display: block;
@@ -117,7 +122,8 @@
         font-size: 1.4em;
         line-height: 1.2;
         display:inline-block;
-        font-family: $handwritten-font;
+        font-family: $base-font;
+        font-weight:bold;
         color:$color_primary !important;
         border-bottom: 0;
         padding: .5em 0;
@@ -126,9 +132,7 @@
 
 }
 .thumbnail:before{
-    bottom: 5%;
-    right: -75%;
-    @include transform(rotate(-10deg));
+    display: none;
 }
 
 .first-bt a{

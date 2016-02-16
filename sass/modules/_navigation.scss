@@ -34,12 +34,12 @@
 
 #page > header {
     .logo{
-        img {padding-bottom: $vspacing; } 
+/*        img {padding-bottom: $vspacing; } */
     }
     .menu-item{
         > a {
             padding-top: $vspacing;
-            padding-bottom: 2 * $vspacing;
+            padding: 2 * $vspacing 0;
             font-size:.9em;
             margin:0 .5em;
             display: block;
@@ -69,7 +69,7 @@
                 border-color: $color_primary;
             }
             &:hover > ul.sub-menu{display:block;}
-/*            &.current-menu-item > ul.sub-menu{display:block;}*/
+            &.current-menu-item > ul.sub-menu{display:block;}
         }
     }
     ul.sub-menu{
@@ -79,7 +79,7 @@
         left:0;
         z-index: 9999;
         background:white;
-/*        border-top:5px solid $color_primary;*/
+        border-top:5px solid $color_primary;
         min-width: 100%;
         margin: 0;
         @include shadow(2px);

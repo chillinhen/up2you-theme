@@ -5,7 +5,7 @@
             top:0;
             left:0;
             right:0;
-            z-index: 999;
+            z-index: 9999;
             background:white;
             padding-top:$vspacing;
             @include shadow(2px);
@@ -16,7 +16,7 @@
     }
     > main {
         .panels {
-            margin:0 $vspacing;
+            margin:4 * $vspacing $vspacing;
             padding-bottom:2 * $vspacing;
         }
         #page-cnt {
@@ -25,15 +25,12 @@
         .site-main{
             body:not(.home) & {
                 border-top: 1px dashed $color-light-grey;
-                padding-top:4 * $vspacing;
+                padding-top:3 * $vspacing;
             }
-        }
-        
-        aside.sidebar {
-/*            margin:2 * $vspacing 0;*/
         }
     }
     > footer {
+        padding:2 * $vspacing 0 0 0;
         background:$footer-background;
         .footer-widget{
             padding:0 $vspacing;
@@ -44,7 +41,7 @@
                 padding-right:0;
             }
         }
-        body:not(.home){
+        body:not(.home) &{
             margin-top:2 * $vspacing;
         }
         

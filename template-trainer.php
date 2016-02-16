@@ -23,7 +23,7 @@ get_header();
             ?>
             <?php
             if ($trainer->have_posts()): while ($trainer->have_posts()) : $trainer->the_post();
-                    get_template_part('partials/article');
+                    get_template_part('partials/article','trainer');
                 endwhile;
             endif;
             wp_reset_query();
@@ -39,9 +39,6 @@ get_header();
 <?php endif; ?>
 
         </div>
-        <?php if (!(is_front_page())) : ?>
-            <?php get_sidebar(); ?>
-<?php endif; ?>
     </section>
 
 </main>

@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     //alert('hallo');
     //remove clutter
-    $('.opening br, .contact-data br').remove();
+    $('.opening br, .contact-data br, .single-programme h1 br').remove();
     $('#menu-meta a').each(function () {
         $(this).wrapInner('<span></span>');
     });
@@ -27,9 +27,9 @@ jQuery(document).ready(function ($) {
     // Header/Banner tweaking
     var gap = $('.header .top.fixed').height();
     if ($("#banner").length) {
-        $('#banner').css('margin-top',gap);
+        $('#banner').css('margin-top',gap * 1);
     } else {
-        $('#page header.header').css('margin-bottom',gap);
+        $('#page header.header').css('margin-bottom',gap * 1);
     }
     
     if ($("#banner").length || $('.full-size-bar')) {

@@ -9,12 +9,16 @@
             li.product {
                 min-height: 380px;
                 text-align:center;
+                width:30%;
+                margin:5% 10%;
                 .add_to_cart_button{
                     margin-top: 1em;
                     position: absolute;
                     bottom: 0;
                     left: 0;
                     right: 0;
+                    background-color: transparent;
+                    color:#000;
                 }
                 .add_to_cart_button.added{
                     text-indent: -999px;
@@ -24,6 +28,7 @@
                     color:white;
                     padding:0;
                 }
+                .star-rating{display: none;}
             }
             .star-rating{
                 margin:.5em;

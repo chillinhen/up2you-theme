@@ -1,3 +1,4 @@
+/*https://www.google.com/fonts#UsePlace:use/Collection:Lobster+Two|Yanone+Kaffeesatz|Bree+Serif|Basic|Oleo+Script|Sansita+One*/
 @font-face {
     font-family: 'FontAwesome';
     src: url('fonts/fontawesome/fontawesome-webfont.eot?v=#4.1.0');
@@ -56,6 +57,9 @@ legend{
    [class*="-cards"] &, aside &{
        font-family: $base-font;
     }
+    .post_content &{
+        margin:1em 0 .5em 1em;
+    }
     .parallax .post_content & {
         color:$color_primary;
         text-align: center;
@@ -86,7 +90,7 @@ legend{
     
 }
 
-.badge, [id*="message"] *, [id*="contact"] h1{
+[id*="message"] h1, [id*="contact"] h1{
     font-family: $handwritten-font;
     line-height: 1;
     font-weight:normal;
@@ -96,6 +100,9 @@ h1{
     letter-spacing: -1px;
     line-height: 1.214;
     font-weight: 300;
+    .full-size-bar &{
+        padding-top:.5em;
+    }
     [class*="-cards"] &, aside & {
         font-size: 1.2em;
         margin: .5em 0;
@@ -113,6 +120,10 @@ h1{
     }
 }
 h2{
+    [id*="message"] & {
+        font-family: $base-font;
+        font-weight:bold !important;
+    }
     font-size: 1.618em;
     [class*="-cards"] &, aside & {
         font-size: 1em;
@@ -147,10 +158,25 @@ ol {
 ul {
     list-style: disc;
     list-style: none;
-    #page > main {
-        list-style-type: square;
-        margin: 0 0 $vspacing 0;
+    .post_content & li {
+        @include default-list;
     }
+    .motivation-list & li:before {
+        content:"\f005";
+    }
+    .shopping-list & {
+        li:before {
+            content:"\f07a";
+        }
+    }
+    .check-list & li:before {
+        content:"\f00c";
+    }
+
+}
+
+ul {
+    
 }
 
 ol {
@@ -191,6 +217,11 @@ blockquote {
     padding: 0 $vspacing;
     border-left: 3px solid rgba(0,0,0,0.05);
     font-style: italic;
+    [class*="template-trainer"] & {
+        font-size: larger;
+        color:$color_primary;
+        border:0;
+    }
 }
 
 address {
@@ -306,19 +337,15 @@ article{
     font-weight: normal;
     line-height: 1;   
     font-size: 2.8em;
+    margin-top:2.4em; 
     .parallax & {  
         color:$color-dark-grey !important;
     }
 }
-.claim{
-    @include transform(rotate(-12deg));
-    @include transform-origin(center top);
-    margin-top:1em; 
-    max-width: 50%;
+.claim {
+    text-align: center;
 }
 .question{
-    @include transform(rotate(-6deg));
-    @include transform-origin(center top);
     &:after{
         @include transform(rotate(16deg));
     @include transform-origin(center top);
@@ -336,10 +363,10 @@ article{
         margin:0; padding:0;
     }
     h2 {
-        font-size:3em;
+        font-size:1.8em;
     }
     p{
-        font-size: 1.8em;
+        font-size: 1.2em;
     }
 }
 /*** woocommerce***/

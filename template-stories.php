@@ -1,13 +1,16 @@
-<?php 
+<?php
 /**
  * The template for displaying the homepage.
  * Template name: Erfolgsstories
  */
-get_header(); ?>
+get_header();
+?>
 
 <main role="main">
     <!-- section -->
-
+    <div class="full-size-bar" id="message-02">
+        <div class="col-full"><h1><?php _e('Erfolgstories', 'up2you-theme'); ?></h1></div>
+    </div>
     <section class="wrapper site-main">
         <div class="content">
             <?php
@@ -21,12 +24,12 @@ get_header(); ?>
             $article = new WP_Query($filter);
             ?>
 
-            <h1><?php _e('Erfolgstories', 'up2you-theme'); ?></h1>
+
 
             <?php
             if ($article->have_posts()) :
                 while ($article->have_posts()) : $article->the_post();
-                    get_template_part('partials/article', 'erfolgsstories');
+                    get_template_part('partials/article');
 
                 endwhile;
                 wp_reset_query();
@@ -36,11 +39,8 @@ get_header(); ?>
 
             <?php endif; ?>
 
-            <?php get_template_part('pagination'); ?>
+        <?php get_template_part('pagination'); ?>
         </div>
-        <?php if (!(is_front_page())) : ?>
-            <?php get_sidebar(); ?>
-        <?php endif; ?>
     </section>
     <!-- /section -->
 </main>

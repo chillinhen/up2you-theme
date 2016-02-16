@@ -1,13 +1,15 @@
+<!-- article -->
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+    <main>
+        
+        <!-- /post thumbnail -->
 
 
-<main role="main">
-    
 
-    <?php get_template_part('partials/message', 'second'); ?>
+        
+    </main>
+<!-- post details -->
 
-    <!-- section -->
-        <?php get_template_part('partials/parallax'); ?>
-    <!-- /section -->
-</main>
-
-
+</article>
+<!-- /article -->

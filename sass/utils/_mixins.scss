@@ -16,6 +16,11 @@
     padding: 0 .5em;
     border-right: 1px solid currentColor;
 }
+@mixin message-bar($col, $img, $mode){
+    background:$col $img no-repeat center center / cover;
+    background-blend-mode:$mode;
+    &:after{@include triangle(50px, $col, down);}
+}
 @mixin overlay {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.85+0,0+52 */
 background: -moz-linear-gradient(45deg,  rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%, rgba(0,0,0,0) 100%); /* FF3.6-15 */

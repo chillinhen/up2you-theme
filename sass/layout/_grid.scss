@@ -1,7 +1,7 @@
-/*$susy: (
+$susy: (
 columns: 12,  // The number of columns in your grid
-gutters: 1/4    , // The size of a gutter in relation to a single column
-);*/
+gutters: 1/3    , // The size of a gutter in relation to a single column
+);
 
 html,
 body {
@@ -9,14 +9,98 @@ body {
 }
 
 * { 
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     position: relative;
     &:before, &:after{
-        @include box-sizing(border-box);
+        box-sizing: border-box;
     }
 }
-html.flexbox{
-    #page {
+.wrapper {
+    @include container;
+    #page > header &{
+        > .logo{
+            @include span (2 of 12);
+            margin-right: 0;
+        }
+        > #main-nav {
+            @include span (6 of 12);
+             margin-right: 0;
+              margin-left: 0;
+        }
+        > .meta {
+            @include span (last 4 of 12);   
+        }
+    }
+    #banner &{
+        > .claim {
+            @extend %clearfix;
+            *{
+                width:100%;
+                text-align: center;
+
+            }
+        }
+        > .claim-list {
+            @include span (6 of 12);
+            @include push(6);
+        }
+    }
+    .parallax & {
+        > * {@include span (4 of 12);}
+        > *:first-child {@include push (2);}
+    }
+    .panels & {
+        max-width:80%;
+        > * {
+            @include span (4 of 12); 
+        }
+        > *:last-child {
+            @include last; 
+        }
+    }
+    [class*="template-trainer"] &.site-main,
+    [class*="template-stories"] &.site-main,
+    .single-erfolgsstories &.site-main,
+    .single-programme & site-main{
+        max-width:80%;
+    }
+    .page &.site-main, .single &.site-main{
+        > .sidebar {
+            @include span (last 4 of 12);
+        }
+        > .content {
+            @include span (8 of 12); 
+        }
+    }
+    [class*="template-stories"] &.site-main,
+    .single-erfolgsstories &.site-main{
+        .content {
+            width:100% !important;
+            float:none !important;
+            margin:0 !important;
+        }
+    }
+
+    .woocommerce &.site-main{
+        > .sidebar {
+            @include span (4 of 12);
+        }
+        > .content {
+            @include span (last 8 of 12); 
+        }
+    }
+    
+    #page > footer &{
+        > .footer-widget{
+            @include span (3 of 12);  
+        }
+        > .footer-widget:last-child{
+            @include last; 
+        }
+    }
+}
+/*html.flexbox{
+#page {
         @include display(flex);
         @include align-items(stretch);
         min-height: 100vh;
@@ -25,89 +109,4 @@ html.flexbox{
             @include flex(1);
         }
     }
-}
-.wrapper {
-    @include clearfix;
-    @include display(flex);
-    @include flex-direction(row);
-
-    > * {@include flex(1);}
-    > *:first-child{
-        margin-right: 2em
-    }
-    > *:last-child{
-        margin-left: 2em
-    }
-    > .content {
-        @include flex(2); 
-
-        .woocommerce & {
-            @include flex(4); 
-        }
-    }
-    .footer-bottom-line & {
-      > .copyright{@include flex(2); }
-    }
-/*    > aside {
-        @include flex(1); 
-        .woocommerce.single & {display: none;}
-    }*/
-
-
-
-    #page > header .top & {
-        @include align-items(flex-end);
-        @include justify-content(center);
-        > .logo{
-            margin:0;
-            @include flex(1);
-        }
-        
-        > nav {
-            @include flex(3);
-        }
-
-        > .meta {
-            @include flex(2);
-            margin:0 0 0 0;
-        }
-    }
-    #page > main .panels &{
-        @include align-items(flex-start);
-        @include justify-content(space-around);
-    }
-    #page > main .parallax &{
-        width:75%;
-        @include align-items(flex-start);
-        @include justify-content(space-around);
-    }
-    #page > footer &{
-        padding-top:2 * $vspacing;
-        .footer-widget{
-            flex-basis: 25%;
-        }
-    }
-    [class*="-cards"]{
-        [class*="template-trainer"] &{
-            @include display(flex);
-            @include align-items(flex-start);
-            @include justify-content(space-around);
-
-            > * {
-                @include flex(1);
-                margin:0 1em;
-            }
-        }
-    }
-    .single-erfolgsstories & {
-        > aside {
-            flex-basis: 30%;
-            ~.post_content{
-                flex-basis: 70%;
-            }
-        }
-        .infos{
-           flex-basis: 50%; 
-        }
-    }
-}
+}*/

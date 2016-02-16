@@ -41,24 +41,27 @@
         margin-left:-25px;
         z-index: 99;
     }
-    &#message-01{
-        background:$color_secondary url('../img/pattern-first.svg') no-repeat center center / cover;
-    }
-    &#message-01:after{
-        @include triangle(50px, $color_secondary, down);
-    }
-        &#message-02{
-        background:$color_contrast url('../img/pattern-second.svg') no-repeat center center / cover;
-    }
-    &#message-02:after{
-        @include triangle(50px, $color_contrast, down);
-    }
+}
+.single-programme #message{
+    @include message-bar($color_primary, url('../img/pattern-first.svg'),soft-light);
+}
+#message-01{
+    @include message-bar($color_secondary, url('../img/pattern-first.svg'),normal);
+}
+#message-02{
+    @include message-bar($color_contrast_dark, url('../img/pattern-second.svg'),soft-light);
+}
+.cta-link{
+    text-align:center;
 }
 .badge {
+/*    display:none !important;*/
+    html.flexbox & {
     @include display(flex);
     @include flex-direction(column);
     @include justify-content(center);
     @include align-items(center);
+    }
     width: 50%;
     margin: 25%;
     height: 50%;
@@ -68,6 +71,24 @@
     text-align: center;
     color:white ;
     font-family: $handwritten-font;
+    position: absolute;
+    top: 35%;
+    left: 0;
+    z-index: 999;
+    html.csstransforms &{
+        @include transform(rotate(-8deg));
+    }
+    html.csstransforms .programme:first-child &{ @include transform(rotate(-18deg));}
+    html.csstransforms .programme:last-child &{@include transform(rotate(18deg));}
+    
+    .programme:first-child &{   
+        top: 30%;
+        left: -30%;
+    }
+    .programme:last-child &{
+        top: 30%;
+        left: 30%;
+    }
     > span{
         @include flex(1);
         color:inherit !important;
@@ -83,7 +104,7 @@
         margin:0 5%;
     }
     
-    &:hover .overlay{
+/*    &:hover .overlay{
         cursor:pointer;
         opacity: 1;
         @include transition(opacity 0.5s ease-in 0s, width 1.0s ease-in 1s);
@@ -96,7 +117,7 @@
         left:0;
         right:0;
         @include alpha-background-color(rgba(black, 0.35), white);
-    }
+    }*/
 }
 .social-media{
     @extend %clearfix;
@@ -275,6 +296,7 @@
 
 /**** Tabbed ****/
 #tabbed{
+    margin:2em 0;
      ul {
         list-style-type: none;
         margin: 0;

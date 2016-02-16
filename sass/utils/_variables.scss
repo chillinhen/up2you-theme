@@ -8,7 +8,7 @@ $foo:red;
 }
 $base-font: 		"Josefin Sans", arial, helvetica, sans-serif !default;
 $header-font: 		"Merriweather", georgia, times new roman, serif !default;
-$handwritten-font:      "Schoolbell", cursive !default;
+$handwritten-font:      "Lobster Two", cursive !default;
 $base-font-size:        16px;
 $semibold:              600;
 
@@ -18,7 +18,8 @@ $color_body: 		#333;
 $footer-background:     #f3f3f3;
 $color_primary:         #d14491;
 $color_secondary:       #e22185;
-$color_contrast:        #76A9D7;
+$color_contrast:        #5CA6FF;
+$color_contrast_dark:   tint($color_contrast,15%);
 $color_links:           $color_primary;	
 $color-light-grey:      #ababab;
 $color-dark-grey:       #44484e;

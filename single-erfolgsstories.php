@@ -7,7 +7,7 @@
             </header>
             <section class="wrapper site-main">
                 <?php if (has_post_thumbnail()) : // Check if Thumbnail exists ?>
-                    <aside>
+                    <aside class="sidebar">
                         <a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <?php the_post_thumbnail(); ?>
                         </a>
@@ -33,19 +33,14 @@
                 ?>
                 <!-- Phasen -->
 
-                <?php if ($fazit) : ?>
-
-
-                </section>
-            <?php endif; ?>
-
         <?php endwhile; // end of the loop.    ?>
-        <section class="wrapper">
+        
             <div id="tabbed">
                 <ul id="tabs">
                     <?php for ($label = 1; $label <= 3; $label++) : ?>
                         <li><h3>Phase <?php echo $label; ?></h3></li>
                     <?php endfor; ?>
+                        <li><h3><?php _e('Tabelle');?></h3></li>
                 </ul> 
                 <ul id="tab">
                     <?php
@@ -55,15 +50,14 @@
                         <li>  <?php echo $post; ?></li>
                     <?php endforeach;
                     ?>
-
+                   <li><?php the_field('vergleichstabelle'); ?></li>
                 </ul>
             </div>
             <!-- /Phasen -->
             <!-- Tabelle -->
 
-            <?php if ($tabelle || $fazit) : ?>
+            <?php if ($fazit) : ?>
                 <div id="data">               
-                    <?php echo $tabelle; ?>
                     <?php if ($name) : ?>
                         <p class="name"><?php echo $name; ?></p>
                     <?php endif; ?>
@@ -79,7 +73,7 @@
                 </div>
             <?php endif; ?> 
             <!-- /Tabelle -->
-        </section>
+             </section>
         <!-- /section -->
     </main>
 <?php else: ?>

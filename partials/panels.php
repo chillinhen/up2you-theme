@@ -2,21 +2,16 @@
     <div>
         <header>
             <?php if (has_post_thumbnail()) : ?>
-                <div class="thumbnail">
-                    <?php the_post_thumbnail(); ?>
-                    <?php if (get_field('preis')) : ?>
-                        <div class="overlay">
-                            <div class="badge">
-                                <p> <?php the_field('preis'); ?></p>
-                            </div>
-                        </div>
-
-                    <?php endif; ?>
+               <div class="thumbnail">
+                   
+                         <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('panel-size'); ?></a>
                 </div>
             <?php endif;
             ?>
             <h3 class="headline">
-                <?php the_title() ?>
+                <a href="<?php the_permalink(); ?>">
+                   <?php the_title() ?>
+                </a>
             </h3>
         </header>
         <section class="post_content">
