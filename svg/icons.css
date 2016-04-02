@@ -1,0 +1,12 @@
+/* Pattern */
+.borderWhite{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+.borderCircleWhite{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;stroke-dasharray:3.0148,3.0148,3.0148,3.0148,3.0148,3.0148;}
+.bgWhite{fill:#FFFFFF;}
+.bgPink{fill:#B5468E;}
+.bgLightGrey{fill:#BABABA;}
+.bgLightPink{fill:#D14491;}
+.opacityMask_2{opacity:0.3;clip-path:url(#SVGID_2_);}
+.opacityMask_4{opacity:0.3;clip-path:url(#SVGID_4_);}
+.opacityMask_6{opacity:0.2;clip-path:url(#SVGID_6_);}
+.Mask4{clip-path:url(#SVGID_4_);}
+.pinkMask2{display:none;clip-path:url(#SVGID_2_);fill:#B6468E;}
