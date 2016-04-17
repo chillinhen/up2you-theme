@@ -482,4 +482,9 @@
 		<circle class="borderCircleWhite" cx="100" cy="100" r="95"/>
 	</g>
 </symbol>
+
+<!-- Menu Bar -->
+<symbol id="menu" viewBox="-625 390.1 28 21.9">
+    <path class="bgPink" d="M-625 390.1h28v2h-28zM-625 400h28v2h-28zM-625 410h28v2h-28z"/>
+</symbol>
 </svg>

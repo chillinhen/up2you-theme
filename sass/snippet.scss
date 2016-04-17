@@ -1,0 +1,99 @@
+
+
+
+.wrapper {
+
+    #page > header &{
+
+        > #main-nav {
+            @include span (6 of 12);
+             margin-right: 0;
+              margin-left: 0;
+        }
+        > #meta-nav {
+            @include span (last 4 of 12);   
+        }
+        @media screen and (max-width:$screen-sm){
+            border:1px solid red;
+            min-height:40px;
+        }
+    }
+    #banner &{
+        > .claim {
+            @extend %clearfix;
+            *{
+                width:100%;
+                text-align: center;
+
+            }
+        }
+        > .claim-list {
+            @include span (6 of 12);
+            @include push(6);
+        }
+    }
+    .parallax & {
+        > * {@include span (4 of 12);}
+        > *:first-child {@include push (2);}
+    }
+    .panels & {
+        max-width:80%;
+        > * {
+            @include span (4 of 12); 
+        }
+        > *:last-child {
+            @include last; 
+        }
+    }
+    [class*="template-trainer"] &.site-main,
+    [class*="template-stories"] &.site-main,
+    .single-erfolgsstories &.site-main,
+    .single-programme & site-main{
+        max-width:80%;
+    }
+    .page &.site-main, .single &.site-main{
+        > .sidebar {
+            @include span (last 4 of 12);
+        }
+        > .content {
+            @include span (8 of 12); 
+        }
+    }
+    [class*="template-stories"] &.site-main,
+    .single-erfolgsstories &.site-main{
+        .content {
+            width:100% !important;
+            float:none !important;
+            margin:0 !important;
+        }
+    }
+
+    .woocommerce &.site-main{
+        > .sidebar {
+            @include span (4 of 12);
+        }
+        > .content {
+            @include span (last 8 of 12); 
+        }
+    }
+    
+    #page > footer &{
+        > .footer-widget{
+            @include span (3 of 12);  
+        }
+        > .footer-widget:last-child{
+            @include last; 
+        }
+    }
+}
+/*html.flexbox{
+#page {
+        @include display(flex);
+        @include align-items(stretch);
+        min-height: 100vh;
+        @include flex-direction(column);
+        > *{
+            @include flex(1);
+        }
+    }
+}*/

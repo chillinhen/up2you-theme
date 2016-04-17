@@ -1,91 +1,35 @@
 
-/*html.flexbox{
-    #page {
-        @include display(flex);
-        @include align-items(stretch);
-        min-height: 100vh;
-        @include flex-direction(column);
-        > *{
-            @include flex(1);
-        }
-    }
+@media screen and (max-width:$screen-xs){
+    #main-nav,
+    #meta-nav,
+    #banner, 
+    #page > main, 
+    #modalBox,
+    .cart-tab,
+    #page > footer
+    {display:none;}
 }
-.wrapper {
-    @include clearfix;
-    @include display(flex);
-    @include flex-direction(row);
-
-    > * {@include flex(1);}
-    > *:first-child{
-        margin-right: 2em
-    }
-    > *:last-child{
-        margin-left: 2em
-    }
-    > .content {
-        @include flex(2); 
-
-        .woocommerce & {
-            @include flex(4); 
-        }
-    }
-    .footer-bottom-line & {
-      > .copyright{@include flex(2); }
-    }
-
-    #page > header .top & {
-        @include align-items(flex-end);
-        @include justify-content(center);
-        > .logo{
-            margin:0;
-            @include flex(1);
-        }
-        
-        > nav {
-            @include flex(3);
-        }
-
-        > .meta {
-            @include flex(2);
-            margin:0 0 0 0;
-        }
-    }
-    #page > main .panels &{
-        @include align-items(flex-start);
-        @include justify-content(space-around);
-    }
-    #page > main .parallax &{
-        width:75%;
-        @include align-items(flex-start);
-        @include justify-content(space-around);
-    }
-    #page > footer &{
-        padding-top:2 * $vspacing;
-        .footer-widget{
-            flex-basis: 25%;
-        }
-    }
-    [class*="-cards"]{
-        [class*="template-trainer"] &{
-            @include display(flex);
-            @include align-items(flex-start);
-            @include justify-content(space-around);
-
-            > * {
-                @include flex(1);
-                margin:0 1em;
+    
+    .navbar-toggle{
+        @extend %clearfix;
+            color:$color_primary;
+            border:1px solid currentColor;
+            @include border-radius(5px);
+            @include size(auto 44px);
+            max-width:10em;
+            margin:0 auto;
+            padding:.5em 1em;
+            .icon {
+                @include transform(scale(0.15));
+                @include transform-origin(left top);
+                @include size(44px);
+                display:inline-block;
+                margin-right:.5em;
+                + span {
+                    font-size: 1.5em;
+                }
             }
+            span {float:left;}
         }
-    }
-    .single-erfolgsstories & {
-        > aside {
-            flex-basis: 30%;
-            ~.post_content{
-                flex-basis: 70%;
-            }
-        }
-        .infos{
-           flex-basis: 50%; 
-        }
-    }
-}*/
+
+

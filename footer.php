@@ -35,6 +35,7 @@
 </div>
 <!-- /wrapper -->
 <?php get_template_part('partials/modal', 'box'); ?>
+<?php get_template_part('partials/nav', 'off'); ?>
 
 <?php wp_footer(); ?>
 

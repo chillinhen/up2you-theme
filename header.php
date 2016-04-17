@@ -28,7 +28,7 @@
 
     </head>
     <body <?php body_class(); ?>>
-        <?php get_template_part('partials/svg-icons'); ?>
+        <?php get_template_part('svg/inline', 'icons.svg'); ?>
         <!-- wrapper -->
         <div id="page">
 
@@ -39,7 +39,6 @@
                         <!-- logo -->
                         <div class="logo">
                             <a href="<?php echo home_url(); ?>">
-                                <!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
                             </a>
                         </div>
@@ -50,8 +49,14 @@
                         </nav>
                         <!-- /nav -->
 
-                        <div class="meta">
+                        <div id="meta-nav">
                             <?php wp_nav_menu(array('theme_location' => 'meta-links', 'menu_class' => 'meta-menu', 'container' => '', 'fallback_cb' => '')); ?>
+                        </div>
+                        <div class="navbar-toggle btn">
+                            <span class="icon">
+                                <svg><use xlink:href="#menu"></use></svg>
+                            </span>
+                            <span>Menu</span>
                         </div>
                     </div>
                 </div>

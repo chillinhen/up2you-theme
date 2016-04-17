@@ -1,5 +1,22 @@
 jQuery(document).ready(function ($) {
     //alert('hallo');
+    //
+        checkSize();
+
+    // run test on resize of the window
+    $(window).resize(checkSize);
+    //some tweaks for smaller windowa
+
+    function checkSize() {
+        if ($(".navbar-toggle").css("display") == "block") {
+            //Navbar tweaks
+//            $('.navbar-toggle').click(function () {
+//                $('nav#main-nav').toggleClass('open').removeClass('closed');
+//
+//            });
+            }
+    }
+
     //remove clutter
     $('.opening br, .contact-data br, .single-programme h1 br').remove();
     $('#menu-meta a').each(function () {
