@@ -99,11 +99,17 @@ legend{
 }
 h1{
     font-size: 2.244em;
+    @media screen and (max-width:$screen-xs){font-size:1.8em;}
     letter-spacing: -1px;
     line-height: 1.214;
     font-weight: 300;
+    
     .full-size-bar &{
-        padding-top:.5em;
+        @media screen and (max-width:$screen-xs){
+            padding:0;
+            margin:0;
+        }
+        @media screen and (min-width:$screen-md){padding-top:.5em;}   
     }
     [class*="-cards"] &, aside & {
         font-size: 1.2em;

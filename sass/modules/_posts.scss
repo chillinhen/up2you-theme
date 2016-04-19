@@ -20,7 +20,6 @@ article{
     .post_content {
         @include clearfix;
         @media screen and (max-width:$screen-xs){
-            padding:0 2em;
         }
     }
     footer{
@@ -36,7 +35,7 @@ article{
             @extend %clearfix;
         }
         aside {
-            @media screen and (min-width:$screen-md){
+            @media screen and (min-width:$screen-smallPad - 1) and (orientation:landscape){
                 @include span-columns (4);
                 ~.post_content {
                     @include span-columns (8);

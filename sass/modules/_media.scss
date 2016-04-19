@@ -3,6 +3,19 @@
     @media screen and (max-width:$screen-xs){
         background-position: 50% 50%;
         background-size: cover;
+        height:75vH;
+        @media screen and (orientation:portrait){
+            .col-full{
+                height:inherit;
+                position:relative;
+                > .claim {
+                    position: absolute;
+                    left:0;
+                    right:0;
+                    bottom:25%;
+                }
+            }
+        }
     }
     @media screen and (min-width:$screen-sm){
         min-height:500px; 
@@ -57,8 +70,6 @@
     body:not(.home) &{
         position: relative;
         overflow:hidden;
-        height:250px;
-        min-height:none;
         .overlay{
             position: absolute;
             left:0;

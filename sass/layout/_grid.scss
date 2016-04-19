@@ -37,9 +37,7 @@ body {
             @media screen and (max-width:$screen-md){
                 @include span-columns(6);
                 .logo-img {
-                    @media screen and (orientation:landscape){
-                        height:80px;
-                    }
+                     max-height: 20vH;
                 }
             }
             @media screen and (min-width:$screen-md){
@@ -96,6 +94,11 @@ body {
 
         }
     }
+    &.site-main{
+        @media screen and (max-width:$screen-lg){
+            padding:0 2em;
+        }
+    }
     [class*="template-trainer"] &.site-main,
     [class*="template-stories"] &.site-main,
     .single-erfolgsstories &.site-main,
@@ -148,14 +151,20 @@ body {
     }
     
     #page > footer &{
+        @media screen and (min-width:$screen-xs) and (max-width:$screen-md){
+            > .footer-widget{
+                @include span-columns(6);
+                padding-bottom: 2 * $vspacing;
+                @include omega(2n);
+            }
+        }
         @media screen and (min-width:$screen-md){
-        > .footer-widget{
-            
-            @include span-columns(3); 
-        }
-        > .footer-widget:last-child{
-            @include omega(); 
-        }
+            > .footer-widget{
+                @include span-columns(3); 
+                &:last-child{
+                    @include omega(); 
+                }
+            }
         }
     }
 }

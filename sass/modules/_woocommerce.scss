@@ -12,10 +12,19 @@
                 @media screen and (max-width:$screen-xs){
                     width:calc(100% - 2em) !important;
                     margin:2em 1em;
+                    @media screen and (orientation:landscape){
+                        width:calc(50% - 1em) !important;
+                        margin:0;
+                    }
                 }
                 @media screen and (min-width:$screen-md){
                 width:30%;
                 margin:5% 10%;
+                }
+                h3 {
+                    @media screen and (max-width:$screen-xs) and (orientation:landscape){
+                        @include ellipsis(50%);
+                    } 
                 }
                 .add_to_cart_button{
                     margin-top: 1em;
@@ -50,13 +59,29 @@
 
         }
         div.product{
-            .thumbnails{
-                margin:2em 0 0 0;
+            @media screen and (max-width:$screen-xs){
+                
             }
+            @media screen and (max-width:$screen-md){
+                @media screen and (orientation:landscape){
+                    .images{
+                        @include outer-container;
+                    }
+                    .thumbnails,.attachment-shop_single{
+                        @include span-columns(6);
+                    }
+                }
+
+            }
+            @media screen and (min-width:$screen-md){
+                .thumbnails{
+                    margin:2em 0 0 0;
+                }
+            }
+
         }
     }
     .sidebar{
-        @media screen and (max-width:$screen-xs){padding:0 1em;}
         .product_list_widget{
             li{
                 padding:.2em;
@@ -77,9 +102,6 @@
         .widget_product_tag_cloud{
             h3 {display: none;}
         }
-    }
-    .sidebar, .content{
-        @media screen and (max-width:$screen-xs){padding:0 1em;}
     }
 
     .woocommerce-tabs {

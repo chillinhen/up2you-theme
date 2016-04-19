@@ -13,7 +13,7 @@
         display:inline-block;
         margin-right:.5em;
         + span {
-            
+
             font-size: 1.5em;
         }
     }
@@ -46,15 +46,15 @@
         width: auto;
         margin: 2 * $vspacing auto 0 auto; 
     }
-    ul:not(.meta-menu){
+    .off-logo-cnt + ul{
         margin-top:2 * $vspacing;
-        li {
-            min-height: 44px;
-            border-bottom: 1px dashed $color-dark-grey;
-            a{
-                display: block;
-                padding:1em 2em;
-            }
+    }
+    li {
+        min-height: 44px;
+        border-bottom: 1px dashed $color-dark-grey;
+        a{
+            display: block;
+            padding:1em 2em;
         }
     }
     ul.meta-menu{
@@ -77,34 +77,35 @@
 }
 .meta-menu{
     @include display(flex);
-        @include justify-content(space-between);
-        @include align-items(flex-start);
-        li {
-          @include flex(1);
-          a {
-              position: relative;
-              @media screen and (max-width:$screen-md){
-                  &:before{font-size: 2em;}
-              }
-              span {
-                  @media screen and (max-width:$screen-md){
-                      display:none;
-                  }
-              }
-          }
-          &.login > a{@include icon-style("\f090", #000);}
-          &.contact > a{@include icon-style("\f0e0", #000);}
-          &.search > a{@include icon-style("\f002", #000);}
-          &.account > a{@include icon-style("\f007", #000);}
-          &.close{
-              
-              > a{
-                  color:$color-primary;
-                  @include icon-style("\f00d", #000);
-              }
-          }
-          
+    @include justify-content(space-between);
+    @include align-items(flex-start);
+    li {
+        @include flex(1);
+        a {
+            position: relative;
+            margin:0 !important;
+            @media screen and (max-width:$screen-md){
+                &:before{font-size: 2em;}
+            }
+            span {
+                @media screen and (max-width:$screen-lg){
+                    display:none;
+                }
+            }
         }
+        &.login > a{@include icon-style("\f090", #000);}
+        &.contact > a{@include icon-style("\f0e0", #000);}
+        &.search > a{@include icon-style("\f002", #000);}
+        &.account > a{@include icon-style("\f007", #000);}
+        &.close{
+
+            > a{
+                color:$color-primary;
+                @include icon-style("\f00d", #000);
+            }
+        }
+
+    }
 }
 
 #page > header {
@@ -174,7 +175,12 @@
 
 .footer-menu{
     li {
-        display: inline-block;
+        *:not(#offNav){
+            display: inline-block;
+        }
+        #offNav a{
+            padding-left: 0;   
+        }
         @extend %divider;
         &:last-child{
             padding:0;
