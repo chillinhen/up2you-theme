@@ -212,14 +212,13 @@
 /*** Buttons ****/
 .btn {
     &.facebook{
-        @include button($color_contrast, white,2px);
+        @include button($color_contrast, white,2px, rgba(0,0,0,.2));
     }
 }
 /*** scrolling **/
 .scroll-to-top{
     @include alpha-background-color(rgba($color_primary, 0.4), white);
     @include circle(50px);
-    bottom: 100px;
     cursor: pointer;
     display: none;
     font-size: large;
@@ -229,6 +228,12 @@
     right: 20px;
     transition: background-color 0.1s linear 0s;
     z-index: 9999;
+   @media screen and (max-width:$screen-md){
+            bottom: 20px;
+    }
+    @media screen and (min-width:$screen-md){
+            bottom: 100px;
+    }
     
         > * {color:white;}
 
@@ -252,6 +257,20 @@
     transition: opacity 100ms ease-in;
     pointer-events: none;
     
+    .close {
+        position: absolute;
+        top:1em;
+        right:1em;
+        z-index: 999;
+        @include circle(30px);
+        background:$color_primary;
+        color:white;
+        text-align: center;
+        @include shadow(2px,rgba(0,0,0,.5));
+
+        span {display:none;}
+    }
+    
     &:target {
         opacity:1;
         pointer-events: auto;
@@ -267,11 +286,7 @@
         transition: all 200ms ease-in;
         pointer-events: auto;
         height:600px;
-        .close {
-            position: absolute;
-            top:.5em;
-            right:2em;
-        }
+        
         .claim{
             color: $color_primary;
             font-size: 2em;

@@ -150,18 +150,18 @@ box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
     box-shadow: 0 0 5px 0 rgba(0,0,0,.2);
 }
-@mixin shadow($width){
-    -webkit-box-shadow: 0 0 $width 0 rgba(0,0,0,.2);
-    box-shadow: 0 0 $width 0 rgba(0,0,0,.2);
+@mixin shadow($width,$op){
+    -webkit-box-shadow: 0 0 $width 0 $op;
+    box-shadow: 0 0 $width 0 $op;
 }
 @mixin border-radius($args){
     -webkit-border-radius: $args $args $args $args;
     border-radius: $args $args $args $args;
 }
-@mixin button($bg, $col,$width){
+@mixin button($bg, $col,$width, $op){
     background: $bg;
     color:$col;
-    @include shadow($width);
+    @include shadow($width, $op);
     @include border-radius(4px);
     text-transform: uppercase;
     padding: .5em 1em;

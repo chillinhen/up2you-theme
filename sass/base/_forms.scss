@@ -118,7 +118,13 @@ input[type="submit"],
 			opacity: 0.5 !important;
 		}
 	}
-        .wpcf7-form &{width:100% !important;}
+        .wpcf7-form &{
+            @media screen and (max-width:$screen-md){
+                width:90% !important;
+                margin:0px auto;
+            }
+            @media screen and (min-width:$screen-md){width:100% !important;}
+        }
         
 }
 

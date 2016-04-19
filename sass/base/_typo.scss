@@ -47,10 +47,11 @@ h5,
 h6,
 legend{
     font-family: $header-font;
-    clear: none;
-    font-weight: 500 !important;
-    margin: 0 0 .618em;
     font-style: italic;
+    font-weight: 500 !important;
+    clear: none;
+    margin: 0 0 .618em;
+
     .full-size-bar &{
         font-style: normal;
     }
@@ -58,7 +59,8 @@ legend{
        font-family: $base-font;
     }
     .post_content &{
-        margin:1em 0 .5em 1em;
+        @media screen and (max-width:screen-xs){margin:.5em;}
+        @media screen and (min-width:screen-md){margin:1em 0 .5em 1em;}
     }
     .parallax .post_content & {
         color:$color_primary;
@@ -113,7 +115,11 @@ h1{
     [id*="contact"] & {
         margin-top:2 * $vspacing;
     }
-
+    .site-main &{
+        @media screen and (max-width:$screen-xs){
+            margin-top:$vspacing;
+        }
+    }
 
     a {
         font-weight: 300;
@@ -145,8 +151,13 @@ hr {
     margin: 0 0 $vspacing;
 }
 p {
-    padding: 0 0 $vspacing;
-    margin:0 !important;
+    @media screen and (max-width:$screen-xs){
+        padding:0 .5em 1em .5em;
+    }
+    @media screen and (min-width:$screen-md){
+        padding: 0 0 $vspacing;
+        margin:0 !important;
+    }
 }
 
 ul,
@@ -214,7 +225,12 @@ i {
 }
 
 blockquote {
-    padding: 0 $vspacing;
+    @media screen and (max-width:$screen-xs){
+        margin:0;
+    }
+    @media screen and (min-width:$screen-md){
+        padding: 0 $vspacing;
+    }
     border-left: 3px solid rgba(0,0,0,0.05);
     font-style: italic;
     [class*="template-trainer"] & {
@@ -335,23 +351,35 @@ article{
 .claim, .question{
     font-family: $handwritten-font;
     font-weight: normal;
-    line-height: 1;   
-    font-size: 2.8em;
-    margin-top:2.4em; 
+    line-height: 1;
+    
+    @media screen and (max-width:$screen-sm){
+        padding-top:1em;
+        font-size: 2.2em;
+    }
+    @media screen and (min-width:$screen-md){
+        margin-top:2.4em; 
+        font-size: 2.8em;
+    }
+    
+    
     .parallax & {  
         color:$color-dark-grey !important;
     }
 }
 .claim {
     text-align: center;
+    color:white !important;
 }
 .question{
-    &:after{
-        @include transform(rotate(16deg));
-    @include transform-origin(center top);
-        @include bogen(url('../img/bogen.svg'));
-        top:120px;
-        left:120px;
+    @media screen and (min-width:$screen-md){
+        &:after{
+            @include transform(rotate(16deg));
+            @include transform-origin(center top);
+            @include bogen(url('../img/bogen.svg'));
+            top:120px;
+            left:120px;
+        }
     }
 }
 

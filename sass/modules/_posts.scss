@@ -4,10 +4,12 @@ article{
         padding:2em;
     }
     .content &:not(.programme),
-    .content &:not(.trainer){
-        margin: 2 * $vspacing 0;
-        padding: 2 * $vspacing 0;
+        .content &:not(.trainer){
+        @media screen and (min-width:$screen-md){
+            margin: 2 * $vspacing 0;
+            padding: 2 * $vspacing 0; }
         @include border-style(1px 0 0 0, dashed, $color_border);
+
     }
     #page-cnt .content & {
         @extend %reset;
@@ -17,6 +19,9 @@ article{
     }
     .post_content {
         @include clearfix;
+        @media screen and (max-width:$screen-xs){
+            padding:0 2em;
+        }
     }
     footer{
         font-size: smaller;
@@ -31,12 +36,15 @@ article{
             @extend %clearfix;
         }
         aside {
-            @include span (4 of 12);
-            ~.post_content {
-              @include span (last 8 of 12);  
+            @media screen and (min-width:$screen-md){
+                @include span-columns (4);
+                ~.post_content {
+                    @include span-columns (8);
+                    @include omega();
+                }
             }
         }
-        
+
     }
     .kontakt &{
         @include display(flex);
@@ -59,12 +67,20 @@ article{
     }
 
     &.panel.programme{
-        header {
-            padding: 0 1.2em;
+        @media screen and (min-width:$screen-xs) and (max-width:$screen-sm) {
+            header,.post_content {padding:0;}    
+        }
+        @media screen and (min-width:$screen-sm + 1) {
+            header {
+                padding: 0 1.2em;
+            }
+            .post_content {
+                padding:0 1em;
+                margin-top:2 * $vspacing;
+            }
         }
         .post_content {
-            padding:0 1em;
-            margin-top:2 * $vspacing;
+
             .excerpt{
                 li{
                     list-style: none;
@@ -81,6 +97,7 @@ article{
                 }
             }
         }
+
 
     }
     .shopping-list{
@@ -109,9 +126,8 @@ article{
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
-    width:100%;
-    padding:3 * $vspacing 0;
     position:relative;
+    width:100%;
     &:before{
         @include triangle(50px, #ededee, down);
         position: absolute;
@@ -123,83 +139,89 @@ article{
     }
     .post_content{
         @include alpha-background-color(rgba(white, 0.75), white);
-        padding:2 * $vspacing;
+
+    }
+    @media screen and (min-width:$screen-sm){
+        padding:3 * $vspacing 0;
+        .post_content{
+            padding:2 * $vspacing;
+        }
     }
 }
 /**
  * Tables
  */
 table {
-	border-spacing: 0;
-	width: 100%;
-	border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-collapse: separate;
 
-	caption {
-		padding: 1em 0;
-		font-weight: 700;
-	}
+    caption {
+        padding: 1em 0;
+        font-weight: 700;
+    }
 
-	td,
-	th {
-		padding: .2em 0em;
-		text-align: left;
-		vertical-align: top;
-                border-bottom:1px dashed $color_primary;
+    td,
+    th {
+        padding: .2em 0em;
+        text-align: left;
+        vertical-align: top;
+        border-bottom:1px dashed $color_primary;
 
-		p:last-child {
-			margin-bottom: 0;
-		}
-	}
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
 
-	thead {
-		th {
-			border-bottom: 2px solid $color_border;
-			text-transform: uppercase;
-			padding: 1.387em;
-			vertical-align: middle;
-		}
-	}
+    thead {
+        th {
+            border-bottom: 2px solid $color_border;
+            text-transform: uppercase;
+            padding: 1.387em;
+            vertical-align: middle;
+        }
+    }
 
-	tbody {
-		tr:nth-child(2n) {
-			td {
-				background: rgba(0,0,0,0.015);
+    tbody {
+        tr:nth-child(2n) {
+            td {
+                background: rgba(0,0,0,0.015);
 
-				&:last-child {
-					border-right: 0;
-				}
-			}
-		}
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+        }
 
-		td {
-			background: rgba(0,0,0,0.025);
-		}
+        td {
+            background: rgba(0,0,0,0.025);
+        }
 
-		h2 {
-			font-size: 1em;
-			letter-spacing: normal;
-			font-weight: normal;
+        h2 {
+            font-size: 1em;
+            letter-spacing: normal;
+            font-weight: normal;
 
-			a {
-				font-weight: normal;
-			}
-		}
+            a {
+                font-weight: normal;
+            }
+        }
 
-		tr:last-child {
-			td {
-				border-bottom: 0;
-			}
+        tr:last-child {
+            td {
+                border-bottom: 0;
+            }
 
-			th:first-child {
-				border-bottom: 0;
-			}
-		}
-	}
+            th:first-child {
+                border-bottom: 0;
+            }
+        }
+    }
 
-	tfoot {
-		th,
-		td {
-			border-top:1px dotted $color_border;
-		}
-	}
+    tfoot {
+        th,
+        td {
+            border-top:1px dotted $color_border;
+        }
+    }
 }

@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
 
     //remove clutter
     $('.opening br, .contact-data br, .single-programme h1 br').remove();
-    $('#menu-meta a').each(function () {
+    $('.meta-menu a').each(function () {
         $(this).wrapInner('<span></span>');
     });
     //external icons

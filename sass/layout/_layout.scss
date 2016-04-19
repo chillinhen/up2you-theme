@@ -1,9 +1,16 @@
+@media screen and (max-width:$screen-md){
+    #main-nav,
+    #meta-nav, 
+    #modalBox,
+    .cart-tab
+    {display:none;} 
+}
 #page {
     > header {
         .top.fixed{
             @media screen and (max-width:$screen-md){
                 min-height: 40px;
-                z-index: 10;
+                z-index: 1000;
             }
             position: fixed;
             top:0;
@@ -12,24 +19,30 @@
             z-index: 9999;
             background:white;
             padding-top:$vspacing;
-            @include shadow(2px);
-            .logged-in &{
+            @include shadow(2px,rgba(0,0,0,.2));
+            .admin-bar &{
                 top:32px;
             }
         }
     }
     > main {
         .panels {
-            margin:4 * $vspacing $vspacing;
-            padding-bottom:2 * $vspacing;
+            @media screen and (max-width:$screen-md){
+                margin-bottom:4 * $vspacing;
+            }
+            @media screen and (min-width:$screen-md){
+                margin:4 * $vspacing $vspacing;
+                padding-bottom:2 * $vspacing;
+            }
         }
         #page-cnt {
             @include linear-gradient(0deg, #ededee 0%, #fff 50%, #fff 100%);
         }
         .site-main{
             body:not(.home) & {
+                @media screen and (min-width:$screen-md){
                 border-top: 1px dashed $color-light-grey;
-                padding-top:3 * $vspacing;
+                padding-top:3 * $vspacing;}
             }
         }
     }
@@ -69,9 +82,11 @@
             }
         }
         .woocommerce &{
+            @media screen and (min-width:$screen-md){
             margin-right:2em;
             ~.content{
                 margin-left: 2em;
+            }
             }
         }
     }

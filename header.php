@@ -52,12 +52,12 @@
                         <div id="meta-nav">
                             <?php wp_nav_menu(array('theme_location' => 'meta-links', 'menu_class' => 'meta-menu', 'container' => '', 'fallback_cb' => '')); ?>
                         </div>
-                        <div class="navbar-toggle btn">
-                            <span class="icon">
+                        <a class="navbar-toggle" href="#offNav">
+                            <span class="icon" >
                                 <svg><use xlink:href="#menu"></use></svg>
                             </span>
                             <span>Menu</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
