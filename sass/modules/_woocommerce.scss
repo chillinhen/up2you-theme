@@ -27,13 +27,15 @@
                     } 
                 }
                 .add_to_cart_button{
-                    margin-top: 1em;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
                     background-color: transparent;
                     color:#000;
+                    @media screen and (min-width:$screen-md){
+                        margin-top: 1em;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
                 }
                 .add_to_cart_button.added{
                     text-indent: -999px;
