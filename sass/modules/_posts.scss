@@ -18,7 +18,7 @@ article{
         @include border-style(1px, solid, $color_border);
     }
     .post_content {
-        @include clearfix;
+/*        @include clearfix;*/
         @media screen and (max-width:$screen-xs){
         }
     }
@@ -34,16 +34,16 @@ article{
         main {
             @extend %clearfix;
         }
-        aside {
-            @media screen and (min-width:$screen-smallPad - 1) and (orientation:landscape){
+        @media screen and (min-width:$screen-smallPad - 1) and (orientation:landscape){
+            aside {
                 @include span-columns (4);
-                ~.post_content {
-                    @include span-columns (8);
-                    @include omega();
-                }
+            }
+
+            .post_content {
+                @include span-columns (8);
+                @include omega();
             }
         }
-
     }
     .kontakt &{
         @include display(flex);

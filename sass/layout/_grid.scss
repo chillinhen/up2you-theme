@@ -37,7 +37,7 @@ body {
             @media screen and (max-width:$screen-md){
                 @include span-columns(6);
                 .logo-img {
-                     max-height: 20vH;
+                    max-height: 20vH;
                 }
             }
             @media screen and (min-width:$screen-md){
@@ -96,7 +96,7 @@ body {
     }
     &.site-main{
         @media screen and (max-width:$screen-md){
-           padding:1em;
+            padding:1em;
         }
     }
     [class*="template-trainer"] &.site-main,
@@ -112,50 +112,6 @@ body {
         }
 
     }
-    .page &.site-main, .single &.site-main{
-
-        @media screen and (min-width:$screen-md){
-            > .sidebar {
-                @include span-columns(4);
-                @include omega();
-            }
-            > .content {
-                @include span-columns(8); 
-            }
-        }
-        
-    }
-    .site-main{
-        @media screen and (max-width:$screen-maxPhone){
-            > * {padding:1em !important;}
-        }
-        @media screen and (min-width:$screen-maxPhone) and (max-width:$screen-md){
-            > * {padding:1em !important;}
-        }
-    }
-    [class*="template-stories"] &.site-main,
-    .single-erfolgsstories &.site-main{
-        .content {
-            @media screen and (min-width:$screen-md){
-                width:100% !important;
-                float:none !important;
-                margin:0 !important;
-            }
-
-        }
-    }
-    .woocommerce &.site-main{
-        @media screen and (min-width:$screen-md){
-            > .sidebar {
-                @include span-columns(4);
-            }
-            > .content {
-                @include span-columns(8);
-                @include omega(); 
-            }
-        }
-    }
-    
     #page > footer &{
         @media screen and (min-width:$screen-xs) and (max-width:$screen-md){
             > .footer-widget{
@@ -170,6 +126,49 @@ body {
                 &:last-child{
                     @include omega(); 
                 }
+            }
+        }
+    }
+}
+.site-main{
+    @media screen and (max-width:$screen-maxPhone){
+        > * {padding:1em !important;}
+    }
+    @media screen and (min-width:$screen-maxPhone) and (max-width:$screen-md){
+        > * {padding:1em !important;}
+    }
+    @media screen and (min-width:$screen-md){
+        > .sidebar {
+            @include span-columns(4);
+
+        }
+        > [class*="content"] {
+            @include span-columns(8);
+            /*            @include omega();*/
+        }
+    }
+    [class*="template-stories"] &, .single-erfolgsstories &{
+        [class*="content"]{
+            @media screen and (min-width:$screen-md){
+                width:100% !important;
+                float:none !important;
+                margin:0 !important;
+            }
+        }
+        .sidebar{
+            @media screen and (min-width:$screen-md){
+            margin-right: 3em;
+            }
+        }
+    }
+    .woocommerce &{
+        @media screen and (min-width:$screen-md){
+            > .sidebar {
+                @include span-columns(4);
+            }
+            > .content {
+                @include span-columns(8);
+                @include omega(); 
             }
         }
     }

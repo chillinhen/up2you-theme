@@ -55,8 +55,8 @@ legend{
     .full-size-bar &{
         font-style: normal;
     }
-   [class*="-cards"] &, aside &{
-       font-family: $base-font;
+    [class*="-cards"] &, aside &{
+        font-family: $base-font;
     }
     .post_content &{
         @media screen and (max-width:screen-xs){margin:.5em;}
@@ -78,7 +78,7 @@ legend{
             line-height: 1;
             margin-top: 1em;
         }
-        
+
     }
     &.headline, li.product &{
         border:{
@@ -89,7 +89,7 @@ legend{
         padding:.5em 0; 
         text-align: center;
     }
-    
+
 }
 
 [id*="message"] h1, [id*="contact"] h1{
@@ -103,7 +103,7 @@ h1{
     letter-spacing: -1px;
     line-height: 1.214;
     font-weight: 300;
-    
+
     .full-size-bar &{
         @media screen and (max-width:$screen-xs){
             padding:0;
@@ -193,7 +193,7 @@ ul {
 }
 
 ul {
-    
+
 }
 
 ol {
@@ -330,7 +330,7 @@ a {
     text-decoration: none;
     font-weight: normal;
     &:hover {
-      color:$color_links;
+        color:$color_links;
     }
     &:focus {
         outline: none !important;
@@ -342,23 +342,27 @@ article{
     .page_title{
         color:$color_primary;
         margin-bottom: $vspacing;
-        border:{
-            width:0 0 2px 0;
-            style:solid;
-            color:#000;
-        }
+
         [class*="trainer"] &{
             display: none;
         }
     }
-
+/*    &:not(.trainer) , *:not(.erfolgsstories) {
+        .page_title{
+            border:{
+                width:0 0 2px 0;
+                style:solid;
+                color:#000;
+            }
+        }
+    }*/
 }
 /*** specials ***/
 .claim, .question{
     font-family: $handwritten-font;
     font-weight: normal;
     line-height: 1;
-    
+
     @media screen and (max-width:$screen-sm){
         padding-top:1em;
         font-size: 2.2em;
@@ -367,8 +371,8 @@ article{
         margin-top:2.4em; 
         font-size: 2.8em;
     }
-    
-    
+
+
     .parallax & {  
         color:$color-dark-grey !important;
     }
@@ -406,11 +410,11 @@ article{
 /*** woocommerce***/
 .price{
     font-size: larger !important;
-       font-weight: bold !important;
-       color:#000 !important;
+    font-weight: bold !important;
+    color:#000 !important;
     .woocommerce li.product &,
     .woocommerce div.product &.p,
     .woocommerce div.product &.span{
-       
+
     }
 }

@@ -13,67 +13,68 @@
                         </a>
                     </aside>
                 <?php endif; ?>
-                <section class="post_content">
+                <div class="post_content">
                     <?php if (has_post_thumbnail()) : ?>
-                    <h2>" <?php the_post_thumbnail_caption(); ?> "</h2>
-                <?php endif; ?>
+                        <h2>" <?php the_post_thumbnail_caption(); ?> "</h2>
+                    <?php endif; ?>
                     <?php the_content(); ?>   
-                </section>
 
-                <?php
-                $phasen = array();
-                for ($label = 1; $label <= 3; $label++) :
-                    $phasen[] = get_field('phase_' . $label);
-                endfor;
 
-                $fazit = get_field('fazit');
-                $tabelle = get_field('vergleichstabelle');
-                $name = get_field("name");
-                $weitereInfos = get_field("weitere_infos");
-                ?>
-                <!-- Phasen -->
-
-        <?php endwhile; // end of the loop.    ?>
-        
-            <div id="tabbed">
-                <ul id="tabs">
-                    <?php for ($label = 1; $label <= 3; $label++) : ?>
-                        <li><h3>Phase <?php echo $label; ?></h3></li>
-                    <?php endfor; ?>
-                        <li><h3><?php _e('Tabelle');?></h3></li>
-                </ul> 
-                <ul id="tab">
                     <?php
-                    foreach ($phasen as $post) :
-                        if ($post) : endif;
-                        ?>
-                        <li>  <?php echo $post; ?></li>
-                    <?php endforeach;
+                    $phasen = array();
+                    for ($label = 1; $label <= 3; $label++) :
+                        $phasen[] = get_field('phase_' . $label);
+                    endfor;
+
+                    $fazit = get_field('fazit');
+                    $tabelle = get_field('vergleichstabelle');
+                    $name = get_field("name");
+                    $weitereInfos = get_field("weitere_infos");
                     ?>
-                   <li><?php the_field('vergleichstabelle'); ?></li>
-                </ul>
-            </div>
-            <!-- /Phasen -->
-            <!-- Tabelle -->
+                    <!-- Phasen -->
 
-            <?php if ($fazit) : ?>
-                <div id="data">               
-                    <?php if ($name) : ?>
-                        <p class="name"><?php echo $name; ?></p>
-                    <?php endif; ?>
-                    <?php if ($weitereInfos) : ?>
-                        <em><?php echo $weitereInfos; ?></em>
-                    <?php endif; ?>
-                    <div id="fazit">
 
-                        <h3>Fazit</h3>
-                        <?php echo $fazit; ?>
-
+                    <div id="tabbed">
+                        <ul id="tabs">
+                            <?php for ($label = 1; $label <= 3; $label++) : ?>
+                                <li><h3>Phase <?php echo $label; ?></h3></li>
+                            <?php endfor; ?>
+                            <li><h3><?php _e('Tabelle'); ?></h3></li>
+                        </ul> 
+                        <ul id="tab">
+                            <?php
+                            foreach ($phasen as $post) :
+                                if ($post) : endif;
+                                ?>
+                                <li>  <?php echo $post; ?></li>
+                            <?php endforeach;
+                            ?>
+                            <li><?php the_field('vergleichstabelle'); ?></li>
+                        </ul>
                     </div>
+                    <!-- /Phasen -->
+                    <!-- Tabelle -->
+
+                    <?php if ($fazit) : ?>
+                        <div id="data">               
+                            <?php if ($name) : ?>
+                                <p class="name"><?php echo $name; ?></p>
+                            <?php endif; ?>
+                            <?php if ($weitereInfos) : ?>
+                                <em><?php echo $weitereInfos; ?></em>
+                            <?php endif; ?>
+                            <div id="fazit">
+
+                                <h3>Fazit</h3>
+                                <?php echo $fazit; ?>
+
+                            </div>
+                        </div>
+                    <?php endif; ?> 
+                    <!-- /Tabelle -->
                 </div>
-            <?php endif; ?> 
-            <!-- /Tabelle -->
-             </section>
+            <?php endwhile; // end of the loop.    ?>
+        </section>
         <!-- /section -->
     </main>
 <?php else: ?>

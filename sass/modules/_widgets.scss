@@ -1,11 +1,29 @@
 .cart-tab{
-    top:125px !important;
+	@media screen and (max-width:$screen-md){
+		top:75px !important;
+	}
+	@media screen and (min-width:$screen-md + 1){
+		top:125px !important;
+	}
+    
     
     a.cart-parent {
         color:white !important;
         background: $color_contrast !important;
         .amounts, .contents{color:white !important;}
         
+    }
+    
+    .widget_shopping_cart{
+    	@media screen and (max-width:$screen-xs){
+    		width: 100vW;
+    	}
+    }
+    &.right:hover{
+    	@media screen and (max-width:$screen-xs){
+    		right: -10vW;
+    		left: 10vW;
+    	}
     }
 }
 .cart_totals{
@@ -244,11 +262,6 @@
 }
 /** Modal Box functions**/
 #modalBox{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background: rgba(0, 0, 0, 0.8);
     z-index: 999999999;
     opacity:0;
@@ -272,6 +285,11 @@
     }
     
     &:target {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         opacity:1;
         pointer-events: auto;
     }
@@ -288,7 +306,7 @@
         height:600px;
         
         .claim{
-            color: $color_primary;
+            color: $color_primary !important;
             font-size: 2em;
         }
         .modal-container{
@@ -319,7 +337,7 @@
         li{
             margin-left: 0;
             h3 {margin:0;line-height: 1;}
-/*            &:before{display:none;}*/
+            &:before{display:none;}
         }
         &#tabs {
             z-index:10;

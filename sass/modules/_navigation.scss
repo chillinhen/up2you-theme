@@ -198,20 +198,24 @@
 
 .footer-menu{
     li {
+        @extend %divider;
+        @media screen and (max-width:$screen-sm){
+            border-right:0 !important;
+        }
+
+        @media screen and (min-width:$screen-md){
+            &:last-child{
+                padding:0;
+                border:0;
+            }
+        }
         *:not(#offNav){
             display: inline-block; 
         }
         #offNav a{
             padding-left: 0;   
         }
-        @media screen and (max-width:$screen-sm){
-            border-right:0 !important;
-        }
-        @extend %divider;
-        &:last-child{
-            padding:0;
-            border:0;
-        }
+
     }
 }
 .widget_nav_menu{
