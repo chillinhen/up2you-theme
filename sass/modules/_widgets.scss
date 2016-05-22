@@ -1,4 +1,11 @@
 .cart-tab{
+	@media screen and (max-width:$screen-xs){
+		a.cart-parent{
+			@include icon-style ("\f07a", white);
+			font-size:2em;
+			> span{display:none;}
+		}
+	}
 	@media screen and (max-width:$screen-md){
 		top:75px !important;
 	}
@@ -26,11 +33,23 @@
     	}
     }
 }
+.cart-tab.right a.cart-parent{
+@media screen and (max-width:$screen-xs){
+	width:2.5em !important;
+	left:-2.5em !important;
+	padding:.25em .5em;
+}
+
+}
 .cart_totals{
     margin: 0 2em;
     width: 30% !important;
 }
-
+.widget_shopping_cart{
+	@media screen and (max-width:$screen-xs){
+		padding:1.3em 0 !important;
+	}
+}
 .woocommerce{
     #respond input#submit.alt,
     a.button.alt,
@@ -310,11 +329,12 @@
             font-size: 2em;
         }
         .modal-container{
-            margin:20% 5% 10% 20%;
+            margin:25% 5% 10% 15%;
             @include display(flex);
-            @include align-items(center);
+            @include align-items(flex-end);
             @include justify-content(space-between);
             > * {@include flex(1);}
+            > .claim{margin:0;}
         }
     }
     &:target .modal-dialog{

@@ -75,6 +75,7 @@
             @media screen and (min-width:$screen-xs){padding:1em 2em;}
             
         }
+        &.search{display:none;}
     }
     ul.meta-menu{
         @media screen and (max-width:$screen-xs){padding:0;}

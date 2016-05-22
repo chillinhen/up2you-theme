@@ -845,83 +845,91 @@ fieldset {
   transition: opacity 0.5s 0.5s ease;
   opacity: 0; }
 
-html,
-body {
-  height: 100%; }
-
-* {
-  box-sizing: border-box;
-  position: relative; }
-  *:before, *:after {
-    box-sizing: border-box; }
-
-/** Sticky Footer */
-/*html.flexbox{
-#page {
-        @include display(flex);
-        @include align-items(stretch);
-        min-height: 100vh;
-        @include flex-direction(column);
-        > *{
-            @include flex(1);
-        }
-    }
-}*/
+/** Sticky Footer *
+html.flexbox{
+	&, body{height: 100%;}
+	*{
+		box-sizing: border-box;
+		position: relative;
+		&:before, &:after{
+			box-sizing: border-box;
+		}
+	}
+	#page {
+		@include display(flex);
+		@include align-items(stretch);
+		min-height: 100vh;
+		@include flex-direction(column);
+		> *{
+		    @include flex(1);
+		}
+	}
+}
 /** end Sticky Footer */
+/*** Wrapper ***/
 .wrapper {
   max-width: 100%;
   width: auto;
   max-width: 1200px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  /*** End Page Header ***/
+  /*** End Banner ***/
+  /*** End Parallax ***/
+  /*** End Panels ***/
+  /*** End Site Main ***/
+  /*** End Site Main Spezified***/
+  /*** End Footer**/ }
   .wrapper::after {
     clear: both;
     content: "";
     display: table; }
-  @media screen and (max-width: 992px) {
-    #page > header .wrapper .logo {
+  #page > header .wrapper {
+    /*** End Logo ***/ }
+    @media screen and (max-width: 992px) {
+      #page > header .wrapper .logo {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%; }
+        #page > header .wrapper .logo:last-child {
+          margin-right: 0; }
+        #page > header .wrapper .logo .logo-img {
+          max-height: 20vH; } }
+    @media screen and (min-width: 992px) {
+      #page > header .wrapper .logo {
+        margin-right: 0;
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 14.70196%; }
+        #page > header .wrapper .logo:last-child {
+          margin-right: 0; } }
+    #page > header .wrapper .navbar-toggle {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 48.82117%; }
-      #page > header .wrapper .logo:last-child {
+      #page > header .wrapper .navbar-toggle:last-child {
         margin-right: 0; }
-      #page > header .wrapper .logo .logo-img {
-        max-height: 20vH; } }
-  @media screen and (min-width: 992px) {
-    #page > header .wrapper .logo {
-      margin-right: 0;
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 14.70196%; }
-      #page > header .wrapper .logo:last-child {
-        margin-right: 0; } }
-  #page > header .wrapper .navbar-toggle {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
-    #page > header .wrapper .navbar-toggle:last-child {
-      margin-right: 0; }
-  @media screen and (min-width: 992px) {
-    #page > header .wrapper > #main-nav {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 48.82117%;
-      margin-right: 0;
-      margin-left: 0; }
-      #page > header .wrapper > #main-nav:last-child {
+    @media screen and (min-width: 992px) {
+      #page > header .wrapper > #main-nav {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 48.82117%;
+        margin-right: 0;
+        margin-left: 0; }
+        #page > header .wrapper > #main-nav:last-child {
+          margin-right: 0; }
+      #page > header .wrapper > #meta-nav {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 31.76157%;
         margin-right: 0; }
-    #page > header .wrapper > #meta-nav {
-      float: left;
-      display: block;
-      margin-right: 2.35765%;
-      width: 31.76157%;
-      margin-right: 0; }
-      #page > header .wrapper > #meta-nav:last-child {
-        margin-right: 0; } }
+        #page > header .wrapper > #meta-nav:last-child {
+          margin-right: 0; } }
   #banner .wrapper > .claim * {
     width: 100%;
     text-align: center; }
@@ -955,8 +963,7 @@ body {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 31.76157%;
-      /*                 max-width:80%;*/ }
+      width: 31.76157%; }
       .panels .wrapper > *:last-child {
         margin-right: 0; }
       .panels .wrapper > *:last-child {
@@ -995,53 +1002,61 @@ body {
       #page > footer .wrapper > .footer-widget:last-child {
         margin-right: 0; } }
 
-@media screen and (max-width: 736px) {
-  .site-main > * {
-    padding: 1em !important; } }
-@media screen and (min-width: 736px) and (max-width: 992px) {
-  .site-main > * {
-    padding: 1em !important; } }
-@media screen and (min-width: 992px) {
-  .site-main > .sidebar {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    .site-main > .sidebar:last-child {
+/*** End Wrapper ***/
+.site-main {
+  /*** End media queries ***/
+  /*** End erfolgstories ***/
+  /*** End .woocommerce ***/ }
+  @media screen and (max-width: 736px) {
+    .site-main > * {
+      padding: 1em !important; } }
+  @media screen and (min-width: 736px) and (max-width: 992px) {
+    .site-main > * {
+      padding: 1em !important; } }
+  @media screen and (min-width: 992px) {
+    .site-main > .sidebar {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      .site-main > .sidebar:last-child {
+        margin-right: 0; }
+    .site-main > [class*="content"] {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%; }
+      .site-main > [class*="content"]:last-child {
+        margin-right: 0; } }
+  [class*="template-stories"] .site-main, .single-erfolgsstories .site-main {
+    /*** End .content ***/
+    /*** End .sidebar ***/ }
+    @media screen and (min-width: 992px) {
+      [class*="template-stories"] .site-main [class*="content"], .single-erfolgsstories .site-main [class*="content"] {
+        width: 100% !important;
+        float: none !important;
+        margin: 0 !important; } }
+    @media screen and (min-width: 992px) {
+      [class*="template-stories"] .site-main .sidebar, .single-erfolgsstories .site-main .sidebar {
+        margin-right: 3em; } }
+  @media screen and (min-width: 992px) {
+    .woocommerce .site-main > .sidebar {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      .woocommerce .site-main > .sidebar:last-child {
+        margin-right: 0; }
+    .woocommerce .site-main > .content {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
       margin-right: 0; }
-  .site-main > [class*="content"] {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%;
-    /*            @include omega();*/ }
-    .site-main > [class*="content"]:last-child {
-      margin-right: 0; } }
-@media screen and (min-width: 992px) {
-  [class*="template-stories"] .site-main [class*="content"], .single-erfolgsstories .site-main [class*="content"] {
-    width: 100% !important;
-    float: none !important;
-    margin: 0 !important; } }
-@media screen and (min-width: 992px) {
-  [class*="template-stories"] .site-main .sidebar, .single-erfolgsstories .site-main .sidebar {
-    margin-right: 3em; } }
-@media screen and (min-width: 992px) {
-  .woocommerce .site-main > .sidebar {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
-    .woocommerce .site-main > .sidebar:last-child {
-      margin-right: 0; }
-  .woocommerce .site-main > .content {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%;
-    margin-right: 0; }
-    .woocommerce .site-main > .content:last-child {
-      margin-right: 0; } }
+      .woocommerce .site-main > .content:last-child {
+        margin-right: 0; } }
 
+/*** End Site Main ***/
 @media screen and (max-width: 992px) {
   #main-nav,
   #meta-nav,
@@ -1205,6 +1220,8 @@ body {
     @media screen and (min-width: 480px) {
       #offNav li a {
         padding: 1em 2em; } }
+  #offNav li.search {
+    display: none; }
 @media screen and (max-width: 480px) {
   #offNav ul.meta-menu {
     padding: 0; } }
@@ -1389,6 +1406,17 @@ body {
   padding: .2em 0;
   border-bottom: 1px dotted #ababab; }
 
+@media screen and (max-width: 480px) {
+  .cart-tab a.cart-parent {
+    font-size: 2em; }
+    .cart-tab a.cart-parent:before {
+      content: "";
+      font-family: "FontAwesome";
+      margin-right: .53em;
+      display: inline-block;
+      color: white; }
+    .cart-tab a.cart-parent > span {
+      display: none; } }
 @media screen and (max-width: 992px) {
   .cart-tab {
     top: 75px !important; } }
@@ -1408,9 +1436,19 @@ body {
     right: -10vW;
     left: 10vW; } }
 
+@media screen and (max-width: 480px) {
+  .cart-tab.right a.cart-parent {
+    width: 2.5em !important;
+    left: -2.5em !important;
+    padding: .25em .5em; } }
+
 .cart_totals {
   margin: 0 2em;
   width: 30% !important; }
+
+@media screen and (max-width: 480px) {
+  .widget_shopping_cart {
+    padding: 1.3em 0 !important; } }
 
 .woocommerce #respond input#submit.alt, .woocommerce #respond input#submit.alt:hover,
 .woocommerce a.button.alt,
@@ -1788,7 +1826,7 @@ body {
       color: #d14491 !important;
       font-size: 2em; }
     #modalBox .modal-dialog .modal-container {
-      margin: 20% 5% 10% 20%;
+      margin: 25% 5% 10% 15%;
       display: -webkit-box;
       display: -moz-box;
       display: box;
@@ -1796,15 +1834,15 @@ body {
       display: -moz-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -moz-box-align: center;
-      box-align: center;
-      -webkit-align-items: center;
-      -moz-align-items: center;
-      -ms-align-items: center;
-      -o-align-items: center;
-      align-items: center;
-      -ms-flex-align: center;
+      -webkit-box-align: end;
+      -moz-box-align: end;
+      box-align: end;
+      -webkit-align-items: flex-end;
+      -moz-align-items: flex-end;
+      -ms-align-items: flex-end;
+      -o-align-items: flex-end;
+      align-items: flex-end;
+      -ms-flex-align: end;
       -webkit-box-pack: justify;
       -moz-box-pack: justify;
       box-pack: justify;
@@ -1822,6 +1860,8 @@ body {
         -moz-flex: 1;
         -ms-flex: 1;
         flex: 1; }
+      #modalBox .modal-dialog .modal-container > .claim {
+        margin: 0; }
   #modalBox:target .modal-dialog {
     top: 5%; }
 

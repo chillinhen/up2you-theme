@@ -33,7 +33,7 @@ get_header();
                 <?php endif; ?>
             </div>
             <?php if (!(is_front_page())) : ?>
-                <?php get_sidebar('intern'); ?>
+                <?php #get_sidebar('intern'); ?>
             <?php endif; ?>
         </div>
     </section>

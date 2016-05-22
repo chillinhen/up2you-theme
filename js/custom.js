@@ -9,11 +9,8 @@ jQuery(document).ready(function ($) {
 
     function checkSize() {
         if ($(".navbar-toggle").css("display") == "block") {
-            //Navbar tweaks
-//            $('.navbar-toggle').click(function () {
-//                $('nav#main-nav').toggleClass('open').removeClass('closed');
-//
-//            });
+            //Cart Tab tweaks
+				$('.cart-parent').wrapInner('<span></span>');
             }
     }
 

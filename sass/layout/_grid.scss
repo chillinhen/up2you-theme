@@ -3,173 +3,167 @@ $column: 68px;
 $gutter: 30px;
 $grid-columns: 12;
 
-
-html,
-body {
-    height: 100%;
+/** Sticky Footer *
+html.flexbox{
+	&, body{height: 100%;}
+	*{
+		box-sizing: border-box;
+		position: relative;
+		&:before, &:after{
+			box-sizing: border-box;
+		}
+	}
+	#page {
+		@include display(flex);
+		@include align-items(stretch);
+		min-height: 100vh;
+		@include flex-direction(column);
+		> *{
+		    @include flex(1);
+		}
+	}
 }
-* { 
-    box-sizing: border-box;
-    position: relative;
-    &:before, &:after{
-        box-sizing: border-box;
-    }
-}
-/** Sticky Footer */
-/*html.flexbox{
-#page {
-        @include display(flex);
-        @include align-items(stretch);
-        min-height: 100vh;
-        @include flex-direction(column);
-        > *{
-            @include flex(1);
-        }
-    }
-}*/
 /** end Sticky Footer */
+
+/*** Wrapper ***/
 .wrapper {
-    max-width:100%;
-    width:auto;
-    @include outer-container;
-    #page > header & {
-        .logo{
-            @media screen and (max-width:$screen-md){
-                @include span-columns(6);
-                .logo-img {
-                    max-height: 20vH;
-                }
-            }
-            @media screen and (min-width:$screen-md){
-                margin-right: 0;
-                @include span-columns(2);
-            } 
-        }
-        .navbar-toggle{ @include span-columns(6);}
-        @media screen and (min-width:$screen-md){
-            > #main-nav {
-                @include span-columns(6);
-                margin-right: 0;
-                margin-left: 0;
-            }
-            > #meta-nav {
-                @include span-columns(4);
-                @include omega();
-            }
-        }
-    }
-    #banner &{
-        > .claim {
-            @extend %clearfix;
-            *{
-                width:100%;
-                text-align: center;
+	max-width:100%;
+	width:auto;
+	@include outer-container;
+	#page > header & {
+		.logo{
+			@media screen and (max-width:$screen-md){
+			    @include span-columns(6);
+			    .logo-img {
+			        max-height: 20vH;
+			    }
+			}
+			@media screen and (min-width:$screen-md){
+			    margin-right: 0;
+			    @include span-columns(2);
+			}
+		}/*** End Logo ***/ 
+		.navbar-toggle{ @include span-columns(6);}
+		@media screen and (min-width:$screen-md){
+		    > #main-nav {
+		        @include span-columns(6);
+		        margin-right: 0;
+		        margin-left: 0;
+		    }
+		    > #meta-nav {
+		        @include span-columns(4);
+		        @include omega();
+		    }
+		}
+	} /*** End Page Header ***/ 
+	#banner &{
+		> .claim {
+			@extend %clearfix;
+			*{
+				width:100%;
+				text-align: center;
+			}
+		}
+		> .claim-list {
+			@media screen and (min-width:$screen-md){
+				@include span-columns(6);
+				@include shift(6)
+			}
+		}
+	}/*** End Banner ***/
+	.parallax & {
+	    @media screen and (max-width:$screen-maxPhone){padding:0 .5em;}
+	    @media screen and (min-width:$screen-maxPhone) and (max-width:$screen-md){padding:0 1.5em;}
+	    @media screen and (min-width:$screen-md){
+	        > * {@include span-columns(4);}
+	        > *:first-child {@include shift(2);}
+	    }
+	}/*** End Parallax ***/
+	.panels & {
+		> * {
+			@media screen and (min-width:$screen-maxPhone){
+				@include span-columns(4);
+				&:last-child {
+				    @include omega();
+				}
+			}
+		}
+	}/*** End Panels ***/
+	&.site-main{
+	    @media screen and (max-width:$screen-md){
+	        padding:1em;
+	    }
+	}/*** End Site Main ***/
+	[class*="template-trainer"] &.site-main,
+	[class*="template-stories"] &.site-main,
+	.single-erfolgsstories &.site-main,
+	.single-programme & site-main{
+		@media screen and (max-width:$screen-md){
+		    margin-top:2em;
+		}
+		@media screen and (min-width:$screen-md){ 
+		    max-width:80%;
+		    padding:0 2em;
+		}
+	}/*** End Site Main Spezified***/
+	#page > footer &{
+		@media screen and (min-width:$screen-xs) and (max-width:$screen-md){
+		    > .footer-widget{
+		        @include span-columns(6);
+		        padding-bottom: 2 * $vspacing;
+		        @include omega(2n);
+		    }
+		}
+		@media screen and (min-width:$screen-md){
+			> .footer-widget{
+				@include span-columns(3); 
+				&:last-child{
+				    @include omega(); 
+				}
+			}
+		}
+	}/*** End Footer**/
+}/*** End Wrapper ***/ 
 
-            }
-        }
-        > .claim-list {
-            @media screen and (min-width:$screen-md){
-                @include span-columns(6);
-                @include shift(6)
-            }
-        }
-    }
-    .parallax & {
-        @media screen and (max-width:$screen-maxPhone){padding:0 .5em;}
-        @media screen and (min-width:$screen-maxPhone) and (max-width:$screen-md){padding:0 1.5em;}
-        @media screen and (min-width:$screen-md){
-            > * {@include span-columns(4);}
-            > *:first-child {@include shift(2);}
-        }
-    }
-    .panels & {
-        > * {
-            @media screen and (min-width:$screen-maxPhone){
-                @include span-columns(4);
-                /*                 max-width:80%;*/
-                &:last-child {
-                    @include omega();
-                }
-            }
-
-        }
-    }
-    &.site-main{
-        @media screen and (max-width:$screen-md){
-            padding:1em;
-        }
-    }
-    [class*="template-trainer"] &.site-main,
-    [class*="template-stories"] &.site-main,
-    .single-erfolgsstories &.site-main,
-    .single-programme & site-main{
-        @media screen and (max-width:$screen-md){
-            margin-top:2em;
-        }
-        @media screen and (min-width:$screen-md){ 
-            max-width:80%;
-            padding:0 2em;
-        }
-
-    }
-    #page > footer &{
-        @media screen and (min-width:$screen-xs) and (max-width:$screen-md){
-            > .footer-widget{
-                @include span-columns(6);
-                padding-bottom: 2 * $vspacing;
-                @include omega(2n);
-            }
-        }
-        @media screen and (min-width:$screen-md){
-            > .footer-widget{
-                @include span-columns(3); 
-                &:last-child{
-                    @include omega(); 
-                }
-            }
-        }
-    }
-}
 .site-main{
-    @media screen and (max-width:$screen-maxPhone){
-        > * {padding:1em !important;}
-    }
-    @media screen and (min-width:$screen-maxPhone) and (max-width:$screen-md){
-        > * {padding:1em !important;}
-    }
-    @media screen and (min-width:$screen-md){
-        > .sidebar {
-            @include span-columns(4);
-
-        }
-        > [class*="content"] {
-            @include span-columns(8);
-            /*            @include omega();*/
-        }
-    }
-    [class*="template-stories"] &, .single-erfolgsstories &{
-        [class*="content"]{
-            @media screen and (min-width:$screen-md){
-                width:100% !important;
-                float:none !important;
-                margin:0 !important;
-            }
-        }
-        .sidebar{
-            @media screen and (min-width:$screen-md){
-            margin-right: 3em;
-            }
-        }
-    }
-    .woocommerce &{
-        @media screen and (min-width:$screen-md){
-            > .sidebar {
-                @include span-columns(4);
-            }
-            > .content {
-                @include span-columns(8);
-                @include omega(); 
-            }
-        }
-    }
-}
+	@media screen and (max-width:$screen-maxPhone){
+	    > * {padding:1em !important;}
+	}
+	@media screen and (min-width:$screen-maxPhone) and (max-width:$screen-md){
+	    > * {padding:1em !important;}
+	}
+	@media screen and (min-width:$screen-md){
+		> .sidebar {
+			@include span-columns(4);
+		
+		}
+		> [class*="content"] {
+			@include span-columns(8);
+		}
+	}/*** End media queries ***/ 
+	[class*="template-stories"] &, .single-erfolgsstories &{
+		[class*="content"]{
+			@media screen and (min-width:$screen-md){
+			    width:100% !important;
+			    float:none !important;
+			    margin:0 !important;
+			}
+		}/*** End .content ***/ 
+		.sidebar{
+		    @media screen and (min-width:$screen-md){
+		    margin-right: 3em;
+		    }
+		}/*** End .sidebar ***/ 
+	}/*** End erfolgstories ***/ 
+	.woocommerce &{
+		@media screen and (min-width:$screen-md){
+			> .sidebar {
+			    @include span-columns(4);
+			}
+			> .content {
+			    @include span-columns(8);
+			    @include omega(); 
+			}
+		}
+	}/*** End .woocommerce ***/ 
+}/*** End Site Main ***/ 
