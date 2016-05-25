@@ -211,6 +211,7 @@
     > div {
         position:relative;
         margin-left:2em;
+        > span {display: block;}
     }
     > div:before {
         color:$color_primary;

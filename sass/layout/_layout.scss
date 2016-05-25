@@ -65,6 +65,11 @@
             padding:$vspacing 0;
             background: $color-dark-grey;
             * {color:lighten($color-dark-grey,100%);}
+            li {display:inline-block;}
+            @media screen and (min-width:$screen-sm){
+				> .wrapper > div:first-child {@include span-columns(4);}
+				> .wrapper > div:last-child {@include span-columns(8);}
+			}
             > .wrapper > *:last-child{text-align: right;}  
             > .wrapper > .copyright {font-size: smaller;}
         }
@@ -90,12 +95,15 @@
         }
     }
     .site-main{
-        .page.kontakt &,
-        .error404 &{
-            padding:5% 20% 0 20%;
+        .page.kontakt & .content,
+        .error404 & .content{
+            width: 50%;
+                margin: 0 auto;
+                float: none;
         }
         &#page-cnt > div {
             font-size: larger;
+            float: none;
             @media screen and (max-width:$screen-xs){
                 margin: 2em .5em 0 .5em;
             }

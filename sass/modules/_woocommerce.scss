@@ -9,6 +9,7 @@
             li.product {
                 min-height: 380px;
                 text-align:center;
+                overflow:hidden;
                 @media screen and (max-width:$screen-xs){
                     width:calc(100% - 2em) !important;
                     margin:2em 1em;
@@ -38,12 +39,13 @@
                     }
                 }
                 .add_to_cart_button.added{
-                    text-indent: -999px;
-                    background-color: $color_primary;
+					display:none;
                 }
                 .added_to_cart{
-                    color:white;
-                    padding:0;
+                    color:white !important;
+					 background-color: $color_primary;
+					 display:block;
+                    
                 }
                 .star-rating{display: none;}
             }

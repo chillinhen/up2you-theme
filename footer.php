@@ -24,7 +24,6 @@
             </div>
             <div class="copyright">
                 &copy; <?php echo date('Y'); ?> copyright <?php bloginfo('name'); ?>. 
-                <?php printf(__('%1$s designed by %2$s.', 'up2you-theme'), 'Childtheme from <a href="//html5blank.com">HTML5 Blank</a> - ', '<a href="http://www.chilliscope.de" alt="Freelance Webdesigner Claudia Hillen">chilliscope</a> & <a href="http://www.woothemes.com" alt="Premium WordPress Themes & Plugins by WooThemes" title="Premium WordPress Themes & Plugins by WooThemes" rel="designer">WooThemes</a>'); ?>
             </div>
         </div>
     </div>

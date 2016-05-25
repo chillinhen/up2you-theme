@@ -387,8 +387,8 @@ article{
             @include transform(rotate(16deg));
             @include transform-origin(center top);
             @include bogen(url('../img/bogen.svg'));
-            top:120px;
-            left:120px;
+            top:200px;
+            left:350px;
         }
     }
 }
