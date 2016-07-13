@@ -50,7 +50,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
         font-family: 'FontAwesome';
         content: "\f069";
         color: #d14491;
-        font-size: .75em;
+        font-size: .5em;
         padding-right: 1em;
         position: absolute;
         top:0;
@@ -164,7 +164,7 @@ box-shadow:inset 1px 1px 5px 0 rgba(0,0,0,.5);
     @include shadow($width, $op);
     @include border-radius(4px);
     text-transform: uppercase;
-    padding: .5em 1em;
+    padding: .5em 2em;
 }
 @mixin bogen($img-url){
     position: absolute;

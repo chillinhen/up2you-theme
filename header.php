@@ -39,7 +39,7 @@
                         <!-- logo -->
                         <div class="logo">
                             <a href="<?php echo home_url(); ?>">
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/up2you-logo.svg" alt="Logo" class="logo-img" onerror="this.onerror=null; this.src='<?php echo get_stylesheet_directory_uri(); ?>/img/up2you-logo.png'">
                             </a>
                         </div>
                         <!-- /logo -->

@@ -20,6 +20,8 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                         <?php the_content(); ?>
+                        <!-- Price Table -->
+                        <?php get_template_part('partials/price','table');?>
 
                         <br class="clear">
 

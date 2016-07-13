@@ -73,7 +73,7 @@
     &:after{
         content:' ';
         position:absolute;
-        bottom:-25px;
+        bottom:-24px;
         left:50%;
         margin-left:-25px;
         z-index: 99;
@@ -135,11 +135,7 @@
     }
 }
 .thumbnail{
-    position: relative;
-    
-    .single & {
-        margin:0 5%;
-    }
+    position: relative;	
     
 /*    &:hover .overlay{
         cursor:pointer;
@@ -245,6 +241,7 @@
         height: 100%;
         pointer-events: none;
     }
+    .kontakt #banner & {padding-bottom: 25%;}
 }
 
 /*** Buttons ****/

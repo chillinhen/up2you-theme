@@ -50,7 +50,7 @@ legend{
     font-style: italic;
     font-weight: 500 !important;
     clear: none;
-    margin: 0 0 .618em;
+    margin-bottom: .618em;
 
     .full-size-bar &{
         font-style: normal;
@@ -91,14 +91,17 @@ legend{
     }
 
 }
+h3 {
+	margin-top:1em;
+}
 
 [id*="message"] h1, [id*="contact"] h1{
-    font-family: $handwritten-font;
+    font-family: $header-font;
     line-height: 1;
     font-weight:normal;
 }
 h1{
-    font-size: 2.244em;
+    font-size: 2.2em;
     @media screen and (max-width:$screen-xs){font-size:1.8em;}
     letter-spacing: -1px;
     line-height: 1.214;
@@ -133,17 +136,17 @@ h1{
 }
 h2{
     [id*="message"] & {
-        font-family: $base-font;
-        font-weight:bold !important;
+        font-family: $header-font;
+        font-weight:300 !important;
     }
-    font-size: 1.618em;
+    font-size: 1.5em;
     [class*="-cards"] &, aside & {
         font-size: 1em;
     }
     letter-spacing: -1px;
 }
 h3{
-    font-size: 1.387em;
+    font-size: 1.3em;
 }
 
 h4 {
@@ -173,11 +176,13 @@ ol {
 }
 
 ul {
-    list-style: disc;
+   
     list-style: none;
     .post_content & li {
-        @include default-list;
+         list-style: disc;
+         list-style-position:inside;
     }
+ 
     .motivation-list & li:before {
         content:"\f005";
     }
@@ -248,6 +253,7 @@ blockquote {
 
 address {
     margin: 0 0 $vspacing;
+    font-style:normal;
 }
 
 pre {

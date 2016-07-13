@@ -10,7 +10,9 @@ $hero = get_field("hero-shot-image");
     <div id="banner" role="banner" style="background-image: url('<?php echo ($hero) ? $hero : ''; ?>');">
         <div class="wrapper">
             <?php if ($claim) : ?>
+            <hgroup>
                 <h1 class="claim"><?php echo $claim; ?></h1>
+                </hgroup>
                 <?php if ($list) : ?>
                     <div class="claim-list">
                         <?php echo $list; ?>

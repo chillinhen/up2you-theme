@@ -20,8 +20,8 @@
                     <?php endif; ?>
                 <section class="post_content">
                             <?php the_content(); ?>
-<!--                        </section>
-                <section class="full-width">-->
+					<!-- Price Table -->
+					<?php get_template_part('partials/price','table');?>
                     <?php if (get_field('checklist')) : ?>
                         <div class="check-list">
                             <?php the_field('checklist'); ?>

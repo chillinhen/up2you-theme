@@ -45,15 +45,6 @@ article{
             }
         }
     }
-    .kontakt &{
-        @include display(flex);
-        @include justify-content(space-between);
-        > * {
-            margin-right:1em;
-            @include flex (1);
-        }
-        > *:last-child {margin-right: 0;}
-    }
     > section {}
     footer {
         margin-top:$vspacing;
@@ -162,7 +153,8 @@ table {
 
     td,
     th {
-        padding: .2em 0em;
+    	font-size:1.4rem;
+        padding: .5em 1em;
         text-align: left;
         vertical-align: top;
         border-bottom:1px dashed $color_primary;
@@ -170,6 +162,14 @@ table {
         p:last-child {
             margin-bottom: 0;
         }
+        li {list-style-position:outside;}
+    }
+    
+    &.preise{
+    	td.label, td.preis{font-weight:bold;}
+    	td.preis{white-space:nowrap;}
+    	
+    	
     }
 
     thead {
@@ -184,7 +184,7 @@ table {
     tbody {
         tr:nth-child(2n) {
             td {
-                background: rgba(0,0,0,0.015);
+                background:lighten($color-dark-grey,65%);
 
                 &:last-child {
                     border-right: 0;
@@ -193,7 +193,7 @@ table {
         }
 
         td {
-            background: rgba(0,0,0,0.025);
+
         }
 
         h2 {

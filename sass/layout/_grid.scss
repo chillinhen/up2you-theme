@@ -135,10 +135,12 @@ html.flexbox{
 	@media screen and (min-width:$screen-md){
 		> .sidebar {
 			@include span-columns(4);
-		
-		}
-		> [class*="content"] {
-			@include span-columns(8);
+            padding: 0 1em;
+            
+            ~ [class*="content"] {
+            	@include span-columns(8);
+            	> div {margin:1em 0;}
+            }
 		}
 	}/*** End media queries ***/ 
 	[class*="template-stories"] &, .single-erfolgsstories &{

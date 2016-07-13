@@ -1,15 +1,1 @@
-<!-- article -->
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-    <main>
-        
-        <!-- /post thumbnail -->
-
-
-
-        
-    </main>
-<!-- post details -->
-
-</article>
-<!-- /article -->
+.wp-caption .wp-caption-text, .wp-caption .thumbnail-caption-text, .thumbnail .wp-caption-text, .thumbnail .thumbnail-caption-text

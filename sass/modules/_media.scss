@@ -21,6 +21,9 @@
         min-height:500px; 
         background-position:80% 75%;
         background-size:initial;
+        .kontakt &{
+        min-height:360px;
+        }
     }
 
     .wrapper{
@@ -76,10 +79,18 @@
             right:0;
             bottom:0;
             top:0;
+            z-index:5;
             @include overlay;
             background-repeat: no-repeat;
             background-blend-mode: multiply;
             opacity: .5;
+        }
+        .col-full{
+        	position: absolute;
+        	left:0;
+        	right:0;
+        	bottom:0;
+        	z-index:15;
         }
 
     }
@@ -99,6 +110,7 @@
     position: relative;
     background:white;
     padding:10px 10px 20px;
+    
 
     @include img-shadow;
     
@@ -141,11 +153,11 @@
     }
     .wp-caption-text, .thumbnail-caption-text{
         text-align: left;
-        font-size: 1.4em;
+        font-size: 1em;
         line-height: 1.2;
         display:inline-block;
         font-family: $base-font;
-        font-weight:bold;
+        font-weight:300;
         color:$color_primary !important;
         border-bottom: 0;
         padding: .5em 0;
