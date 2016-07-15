@@ -164,13 +164,12 @@ table {
         }
         li {list-style-position:outside;}
     }
-    
-    &.preise{
-    	td.label, td.preis{font-weight:bold;}
-    	td.preis{white-space:nowrap;}
-    	
-    	
-    }
+
+	td.label, 
+	td.preis,
+	td.level
+	{font-weight:bold;}
+	td.preis{white-space:nowrap;}
 
     thead {
         th {
@@ -182,7 +181,7 @@ table {
     }
 
     tbody {
-        tr:nth-child(2n) {
+        tr:nth-child(even) {
             td {
                 background:lighten($color-dark-grey,65%);
 

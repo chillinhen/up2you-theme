@@ -20,8 +20,9 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                         <?php the_content(); ?>
-                        <!-- Price Table -->
-                        <?php get_template_part('partials/price','table');?>
+                        <!-- Tables -->
+                        <?php get_template_part('partials/table','price');?>
+                        <?php get_template_part('partials/table','dates');?>
 
                         <br class="clear">
 
@@ -31,6 +32,9 @@
                     <!-- /article -->
 
                 <?php endwhile; ?>
+                <!-- Gallery -->
+                <?php get_template_part('partials/gallery');?>
+                
 
             <?php else: ?>
 
@@ -45,7 +49,7 @@
             <?php endif; ?>
         </div>
         <?php if (!(is_front_page())) : ?>
-            <?php get_sidebar(); ?>
+            <?php #get_sidebar(); ?>
         <?php endif; ?>
     </section>
     <!-- /section -->

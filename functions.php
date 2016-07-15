@@ -29,6 +29,7 @@ function up2u_theme_setup() {
     
     //init image styles
     add_image_size('panel-size', 900, 900, true);
+    add_image_size('gallery', 400, 400, true);
 
     // init styles
     add_action('wp_enqueue_scripts', 'theme_enqueue_styles');

@@ -9,9 +9,10 @@
             <?php
             if (have_posts()): while (have_posts()) : the_post();
 
-                    get_template_part('partials/article');
-                    <!-- Price Table -->
-                    <?php get_template_part('partials/price','table');?>
+                    get_template_part('partials/article');?>
+                    <!-- tables -->
+                    <?php get_template_part('partials/table','price');?>
+                    <?php get_template_part('partials/table','dates');?>
 
                 endwhile;
                 ?>

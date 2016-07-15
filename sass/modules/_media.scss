@@ -169,6 +169,20 @@
     display: none;
 }
 
+.gallery {
+	@include outer-container;
+	> figure{
+		text-align:center;
+		font-size:1.4rem;
+		padding:1.2em;
+		@include span-columns(3);
+		@include omega(4n);
+		a {
+		display:block;
+		width:100%;
+		}
+	}
+}
 .first-bt a{
     background-color: darken($color_primary,10%);
 }

@@ -20,8 +20,11 @@
                     <?php endif; ?>
                 <section class="post_content">
                             <?php the_content(); ?>
-					<!-- Price Table -->
-					<?php get_template_part('partials/price','table');?>
+                    <!-- tables -->
+					<?php get_template_part('partials/table','price');?>
+					<?php get_template_part('partials/table','dates');?>
+					
+					<!-- Lists -->
                     <?php if (get_field('checklist')) : ?>
                         <div class="check-list">
                             <?php the_field('checklist'); ?>
@@ -40,7 +43,8 @@
                     <?php if (get_field('link') & get_field('linktext')) : ?>
                         <div class="cta-link">   <a class="btn button" href="<?php the_field('link') ?>"><?php the_field('linktext') ?></a></div>
                     <?php endif; ?>
-                </section>
+                    
+				 </section>
             </section>
   </article>
         <?php endwhile; // end of the loop.    ?>

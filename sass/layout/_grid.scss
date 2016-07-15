@@ -41,17 +41,24 @@ html.flexbox{
 			@media screen and (min-width:$screen-md){
 			    margin-right: 0;
 			    @include span-columns(2);
+			    img{
+			    height: 105px;
+			        max-width: none;
+			        display: block;
+			        width: auto;
+			    }
+			    
 			}
 		}/*** End Logo ***/ 
 		.navbar-toggle{ @include span-columns(6);}
 		@media screen and (min-width:$screen-md){
 		    > #main-nav {
-		        @include span-columns(6);
+		        @include span-columns(7);
 		        margin-right: 0;
 		        margin-left: 0;
 		    }
 		    > #meta-nav {
-		        @include span-columns(4);
+		        @include span-columns(3);
 		        @include omega();
 		    }
 		}
