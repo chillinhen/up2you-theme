@@ -349,9 +349,9 @@ article{
         color:$color_primary;
         margin-bottom: $vspacing;
 
-        [class*="trainer"] &{
+/*        [class*="trainer"] &{
             display: none;
-        }
+        }*/
     }
 /*    &:not(.trainer) , *:not(.erfolgsstories) {
         .page_title{

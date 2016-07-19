@@ -1,7 +1,6 @@
 <?php
 /**
- * The template for displaying the homepage.
- * Template name: Trainer
+ * Template Name: Trainer
  */
 get_header();
 ?>
@@ -17,7 +16,7 @@ get_header();
                 'post_status' => 'publish',
                 'posts_per_page' => -1,
                 'orderby' => 'title',
-                'order' => 'ASC'
+                'order' => 'DESC'
             );
             $trainer = new WP_Query($filter);
             ?>

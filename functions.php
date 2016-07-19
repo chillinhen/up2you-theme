@@ -1,4 +1,7 @@
 <?php
+// init custom posts
+require_once 'inc/custom-posts.php';
+//require_once('inc/customizer.php');
 
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
@@ -42,6 +45,7 @@ function up2u_theme_setup() {
                 );
                 wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,700,700italic,300,300italic,400italic|Lobster+Two', 'style', '1.0', 'all', array('child-style'));
                 wp_enqueue_style('fontawseome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'all', array('child-style'));
+                 wp_enqueue_style('print', get_stylesheet_directory_uri() . '/css/print.css', 'style', '1.0', 'print', array('child-style'));
             }
 
         }

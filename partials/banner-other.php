@@ -1,10 +1,10 @@
 <!-- config Banner -->
 <?php
-$claim = get_field('claim');
+$claim = get_field('frage');
 $list = get_field('liste');
 $button01 = get_field('button-01');
 $button02 = get_field('button-02');
-$hero = get_field("hero-shot-image");
+$hero = get_field("her-shot");
 ?>
 <?php if ($hero) : ?>
     <div id="banner" role="banner" style="background-image: url('<?php echo ($hero) ? $hero : ''; ?>');">

@@ -40,7 +40,7 @@
                             <?php the_field('shoppinglist'); ?>
                         </div>
                     <?php endif; ?>
-                    <?php if (get_field('link') & get_field('linktext')) : ?>
+                    <?php if (get_field('url') & get_field('text')) : ?>
                         <div class="cta-link">   <a class="btn button" href="<?php the_field('link') ?>"><?php the_field('linktext') ?></a></div>
                     <?php endif; ?>
                     
