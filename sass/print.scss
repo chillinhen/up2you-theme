@@ -18,13 +18,25 @@
     .navbar-toggle,
     .nav,
     .full-size-bar:after,
-    #banner{
+    #banner,
+    #main-nav,
+    #meta-nav,
+    #modalBox,
+    .cart-tab,
+    .footer-widget,
+    .parallax,
+    .menu-footerlinks-container,
+    .scroll-to-top,
+    .thumbnail-caption-text,
+    .sh-hide,
+    article footer,
+    .logo,
+    .single-product aside,
+    form,
+    .tabs{
         display: none !important;
     }
-
-    *,
-    *:before,
-    *:after {
+    * {
         background: transparent !important;
         color: #000 !important; /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
@@ -39,10 +51,7 @@
 
 
     a[href]:after {
-        content: " (" attr(href) ")";
-        font-size: 80%;
-        font-style: italic;
-        color:#666;
+        content: " ";
     }
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
@@ -74,10 +83,6 @@
         page-break-inside: avoid;
 
     }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
     img {
         @include bw();
         &:not(.logo-img),
@@ -86,18 +91,8 @@
         }
     }
 
-
-    .logo-img{
-        @include bw();
-        position: absolute;
-        top:0;
-        right:-1cm;
-        height:4cm;
-        width:auto;
-        &:after {
-            content: "www.up2you-coaching.ch";
-        }
-
+   .thumbnail {
+        width: 25%;
     }
     p,
     h2,
@@ -137,11 +132,57 @@
         margin:3cm 2cm;
     }
     body {
+        background: url(../img/logo.png) no-repeat top right / 25% auto !important;
         font-family: $base-font;
         font-size: 1.4;
         line-height: 1.618;
         color: $color_body;
+         
+         > main {
+             margin-top:3cm;
+         }
     }
+    .wrapper, .full-size-bar{
+        width:90%;
+        margin:0;
+        text-align:left;
+    }
+     .full-size-bar,
+     .panel, 
+     article{
+            margin-top:0;
+            padding-top:0;
+            width:100%;
+            position:relative;
+            page-break-before: avoid;
+            page-break-after: auto;
+            page-break-inside: avoid;
+     }
+     .full-size-bar{page-break-after: avoid;}
+     .product .wc-tab{display:block;}
+    .panel{
+        header{
+            width:25%;
+            h3{
+                margin:0;
+                border:0;
+                position: absolute;
+                left:25%;
+                top:0;
+            }
+
+        }
+        .post_content{
+            position: absolute;
+            left:25%;
+            top:2cm;
+            li{
+                &:before{display:none;content:'';}
+                margin-left:0 !important;
+            }
+        }
+    } 
+
 
     h1, h2, h3, h4 {
         line-height: 1.4;

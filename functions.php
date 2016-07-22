@@ -23,6 +23,8 @@ function woocommerce_support() {
     add_theme_support('woocommerce');
 }
 
+
+
 add_action('after_setup_theme', 'up2u_theme_setup');
 
 function up2u_theme_setup() {
@@ -41,11 +43,11 @@ function up2u_theme_setup() {
 
             function theme_enqueue_styles() {
                 wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-                wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/screen.css', array('parent-style')
+                wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/screen.min.css', array('parent-style')
                 );
                 wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,700,700italic,300,300italic,400italic|Lobster+Two', 'style', '1.0', 'all', array('child-style'));
                 wp_enqueue_style('fontawseome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', 'style', '4.4.0', 'all', array('child-style'));
-                 wp_enqueue_style('print', get_stylesheet_directory_uri() . '/css/print.css', 'style', '1.0', 'print', array('child-style'));
+                 wp_enqueue_style('print', get_stylesheet_directory_uri() . '/css/print.min.css', 'style', '1.0', 'print', array('child-style'));
             }
 
         }
